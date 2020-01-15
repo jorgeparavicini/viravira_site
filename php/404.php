@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Page Not Found</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/404.css">
+</head>
+
+<body>
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/html/header.html');
+?>
+<h1>Page Not Found</h1>
+<p>Sorry, but the page you were trying to view does not exist.</p>
+</body>
+
+</html>

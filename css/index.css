@@ -1,0 +1,189 @@
+.welcomeContainer {
+	position: relative;
+	z-index: -1;
+}
+
+.backgroundImage {
+	top: 0;
+	width: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+.ViraVira {
+	font-family: questa-grande, serif;
+	font-size: 5rem;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	color: #F0F7F4E0;
+}
+
+.headMessage {
+	font-family: museo-sans, sans-serif;
+	font-size: 1.875rem;
+	position: absolute;
+	line-height: 1.1;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	color: #F0F7F4E0;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+	.cards {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	section {
+		margin: 10px;
+	}
+
+	.card {
+		margin: 0;
+		padding: 0;
+	}
+
+	.ViraVira {
+		display: none;
+	}
+
+	.headMessage {
+		display: none;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.cards {
+		flex-direction: row;
+		margin: 25px;
+	}
+
+	section {
+		margin: 70px;
+	}
+
+	.card {
+		margin: 20px;
+		padding: 0 20px;
+	}
+
+	h1 {
+		font-size: 3.125rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card {
+	min-width: 160px;
+	color: var(--primary-font-color);
+	display: flex;
+	flex-direction: column;
+
+	font-family: museo-sans, sans-serif;
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	margin: 20px 20px;
+
+
+	text-decoration: none;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card .excerpt {
+	width: 160px;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	text-decoration: none;
+}
+
+.card .title {
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+	border-bottom: 1px solid var(--primary-font-color);
+	text-align: center;
+	text-decoration: none;
+}
+
+.card svg {
+	fill: var(--primary-font-color);
+	width: 75px;
+	margin: 0 auto;
+
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	text-align: center;
+	line-height: 1.1;
+	font-family: questa, serif;
+	max-width: 60rem;
+	margin: auto;
+}
+
+h3 {
+	line-height: 1;
+	font-style: normal;
+	font-weight: 400;
+	font-family: questa, serif;
+	text-align: center;
+	max-width: 60rem;
+	margin: 20px auto;
+}
+
+section p {
+	line-height: 1.375;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 300;
+	font-family: museo-sans, sans-serif;
+	text-align: center;
+	max-width: 60rem;
+	margin: 20px auto;
+
+	text-rendering: optimizeLegibility;
+}
+
+h2 {
+	font-size: 2.5rem;
+	line-height: 1.1;
+	font-style: normal;
+	font-weight: 600;
+	font-family: questa, serif;
+	text-align: center;
+	max-width: 40rem;
+	margin: 20px auto;
+}
