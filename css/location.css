@@ -1,0 +1,219 @@
+#description {
+	margin: 100px 20px 0 20px;
+	text-align: center;
+	border-bottom: 1px solid var(--primary-font-color);
+}
+
+h1 {
+	text-align: center;
+	line-height: 1.1;
+	font-family: questa, serif;
+	max-width: 60rem;
+	margin: auto;
+}
+
+h2 {
+	text-align: center;
+	line-height: 1.1;
+	font-family: questa, serif;
+	max-width: 60rem;
+	margin: 80px auto auto;
+}
+
+p {
+	line-height: 1;
+	font-style: normal;
+	font-weight: 400;
+	font-family: questa, serif;
+	text-align: center;
+	max-width: 60rem;
+	margin: 20px auto;
+}
+
+@media only screen and (max-width: 650px) {
+	.headMessage {
+		display: none;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1.2rem;
+	}
+}
+
+@media only screen and (min-width: 650px) {
+	h1 {
+		font-size: 3.125rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+}
+
+#map {
+	position: relative;
+	margin-top: 80px;
+}
+
+#map > img {
+	width: 100%;
+	object-fit: cover;
+}
+
+#villaSuites {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 34%;
+	left: 11%;
+}
+
+#cheeseFactory {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 24%;
+	left: 50%;
+}
+
+#cheeseFactory span {
+	width: 10rem;
+}
+
+#ruca {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 23%;
+	left: 60%;
+}
+
+#organicGarden {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 35%;
+	left: 57%;
+}
+
+#organicGarden span {
+	width: 7rem;
+}
+
+#mainHotel {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 40%;
+	left: 47%;
+}
+
+#Hacienda {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+
+#hotTub {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 87%;
+	left: 43%;
+}
+
+#hotTub span {
+	width: 7rem;
+}
+
+@media all and (max-width: 700px) {
+	#villaSuites {
+		top: 30%;
+	}
+
+	#cheeseFactory {
+		top: 20%;
+	}
+
+	#ruca {
+		top: 19%;
+	}
+
+	#organicGarden {
+		top: 30%;
+	}
+
+	#mainHotel {
+		top: 35%;
+	}
+
+	#Hacienda {
+		top: 45%;
+	}
+
+	#hotTub {
+		top: 80%;
+	}
+}
+
+.marker {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 1;
+	width: 5rem;
+	z-index: 2;
+}
+
+.marker span {
+	opacity: 0;
+	width: 100%;
+	transition: opacity 0.5s ease;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.marker:hover span {
+	opacity: 1;
+}
+
+.marker img {
+	width: 2rem;
+}
+
+.marker span {
+	position: relative;
+	background: var(--background-color);
+	border: 2px solid var(--primary-accent-color);
+}
+.marker span:after, .marker span:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.marker span:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: var(--background-color);
+	border-width: 6px;
+	margin-left: -6px;
+}
+.marker span:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: var(--primary-accent-color);
+	border-width: 9px;
+	margin-left: -9px;
+}
