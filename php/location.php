@@ -9,6 +9,8 @@
 	      content="Hotel Vira Vira give life to a new way of enjoying holidays, combined with adventure.
          In a unique and privileged location close to Pucon.">
 
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="apple-touch-icon" href="/img/icon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#fafafa">
 
