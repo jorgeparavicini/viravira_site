@@ -2,9 +2,10 @@
 	--background-color: #FDFDFDFF;
 	--primary-font-color: #424241;
 	--secondary-font-color: #1A1F16;
-	--primary-accent-color: #DAA520;
+	--primary-accent-color: #a38c5b;;
 	--secondary-background-color: #1A1F16;
 	--menu-background-color: #122C34;
+	--overlay-color: rgba(35,22,0,0.78);
 }
 
 html {
