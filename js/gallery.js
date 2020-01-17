@@ -1,7 +1,6 @@
-$('.slider').each(function() {
-    let $this = $(this);
-    let $group = $this.find('.slide_group');
-    let $slides = $this.find('.slide');
+function initializeGallery(i, gallery) {
+    let $group = $(gallery).find('.slide_group');
+    let $slides = $(gallery).find('.slide');
     let bulletArray = [];
     let currentIndex = 0;
     let timeout;
@@ -11,11 +10,11 @@ $('.slider').each(function() {
 
         advance();
 
-        if ($group.is(':animated') || currentIndex === newIndex) {
+        if ($group.is(':animated') || currentIndex[i] === newIndex) {
             return;
         }
 
-        bulletArray[currentIndex].removeClass('active');
+        bulletArray[currentIndex].removeClass(('active'));
         bulletArray[newIndex].addClass('active');
 
         if (newIndex > currentIndex) {
@@ -32,7 +31,7 @@ $('.slider').each(function() {
         });
         $group.animate({
             left: animateLeft
-        }, function() {
+        }, function () {
             $slides.eq(currentIndex).css({
                 display: 'none'
             });
@@ -48,16 +47,16 @@ $('.slider').each(function() {
 
     function advance() {
         clearTimeout(timeout);
-        timeout = setTimeout(function() {
+        timeout = (setTimeout(function () {
             if (currentIndex < ($slides.length - 1)) {
                 move(currentIndex + 1);
             } else {
                 move(0);
             }
-        }, 4000);
+        }, 4000));
     }
 
-    $('.next_btn').on('click', function() {
+    $(gallery).find('.next_btn').on('click', function () {
         if (currentIndex < ($slides.length - 1)) {
             move(currentIndex + 1);
         } else {
@@ -65,7 +64,7 @@ $('.slider').each(function() {
         }
     });
 
-    $('.previous_btn').on('click', function() {
+    $(gallery).find('.previous_btn').on('click', function () {
         if (currentIndex !== 0) {
             move(currentIndex - 1);
         } else {
@@ -73,17 +72,21 @@ $('.slider').each(function() {
         }
     });
 
-    $.each($slides, function(index) {
+    $slides.each(function (index) {
         let $button = $('<a class="slide_btn">&bull;</a>');
 
         if (index === currentIndex) {
             $button.addClass('active');
         }
-        $button.on('click', function() {
+        $button.on('click', function () {
             move(index);
-        }).appendTo('.slide_buttons');
+        });
+
+        $(gallery).find('.slide_buttons').append($button);
         bulletArray.push($button);
     });
 
     advance();
-});
+}
+
+$('.gallery').each(initializeGallery);

@@ -20,6 +20,7 @@
 	height: 100%;
 	position: absolute;
 	width: 100%;
+	object-fit: cover;
 }
 
 .slide:first-child {
@@ -42,13 +43,6 @@
 	background: #D1D1D4;
 }
 
-.slide_buttons {
-	left: 0;
-	position: absolute;
-	right: 0;
-	text-align: center;
-}
-
 a.slide_btn {
 	color: #474544;
 	font-size: 42px;
@@ -65,42 +59,37 @@ a.slide_btn {
 }
 
 .directional_nav {
-	height: 100%;
+	display: flex;
+	justify-content: space-between;
 	width: 100%;
-	max-width: 960px;
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	margin: 0;
+	max-width: 940px;
+	margin: 10px auto auto auto;
 	z-index: 1;
 }
 
 .previous_btn {
-	bottom: 0;
-	left: 100px;
-	margin: auto;
-	position: absolute;
-	top: 0;
+	padding-left: 10px;
 }
 
 .next_btn {
-	bottom: 0;
-	margin: auto;
-	position: absolute;
-	right: 100px;
-	top: 0;
+	padding-right: 10px;
 }
 
 .previous_btn, .next_btn {
 	cursor: pointer;
-	height: 65px;
-	opacity: 0.8;
+	height: 40px;
+	width: 40px;
+	opacity: 0.5;
 	-webkit-transition: opacity 0.4s ease-in-out;
 	-moz-transition: opacity 0.4s ease-in-out;
 	-o-transition: opacity 0.4s ease-in-out;
 	transition: opacity 0.4s ease-in-out;
-	width: 65px;
+
+}
+
+.previous_btn svg, .next_btn svg {
+	width: 100%;
+	height: 100%;
 }
 
 .previous_btn:hover, .next_btn:hover {
@@ -108,10 +97,7 @@ a.slide_btn {
 }
 
 @media only screen and (max-width: 767px) {
-	.previous_btn {
-		left: 50px;
-	}
-	.next_btn {
-		right: 50px;
+	.slide_viewer {
+		height: 300px;
 	}
 }

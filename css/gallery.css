@@ -21,11 +21,6 @@ h2 {
 #highlights {
 	position: relative;
 	margin: 40px 0;
-	height: 500px;
-}
-
-#highlights img {
-	object-fit: cover;
 }
 
 #gallery {
@@ -33,10 +28,6 @@ h2 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-}
-
-#gallery a {
-
 }
 
 #gallery a:hover img{

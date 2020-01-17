@@ -27,7 +27,7 @@ include("../html/header.html");
 
 <h2 id="title">Highlights</h2>
 
-<section id="highlights">
+<section id="highlights" class="gallery">
 	<div class="slider">
 		<div class="slide_viewer">
 			<div class="slide_group">
@@ -38,8 +38,7 @@ include("../html/header.html");
 			</div>
 		</div>
 	</div>
-	<div class="slide_buttons">
-	</div>
+
 	<div class="directional_nav">
 		<div class="previous_btn" title="Previous">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -53,6 +52,8 @@ include("../html/header.html");
 					</g>
 				</g>
 			</svg>
+		</div>
+		<div class="slide_buttons">
 		</div>
 		<div class="next_btn" title="Next">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
