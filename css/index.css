@@ -1,113 +1,57 @@
-.welcomeContainer {
+/*#region First section */
+
+.firstSection {
 	margin-top: 80px;
 	position: relative;
 	z-index: -2;
 }
 
 .backgroundImage {
-	top: 0;
 	width: 100%;
 	object-fit: cover;
+}
+
+.welcomeContainer {
+	position: absolute;
+	right: 10%;
+	top: 10%;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	align-items: flex-end;
 }
 
 .ViraVira {
 	font-family: questa-grande, serif;
 	font-size: 5rem;
-	position: absolute;
-	top: 10%;
-	left: 40%;
-	color: #F0F7F4E0;
+	color: var(--background-color);
 	margin: 0;
 }
 
 .headMessage {
 	font-family: museo-sans, sans-serif;
-	font-size: 1.875rem;
-	position: absolute;
 	line-height: 1.1;
-	top: calc(10% + 5rem);
-	left: 40%;
-	color: #F0F7F4E0;
+	color: var(--background-color);
 	font-weight: 500;
 	text-transform: uppercase;
-	letter-spacing: 1px;
 	margin: 0;
 }
 
-.card img {
-	width: 75px;
-	box-sizing: border-box;
+/*#endregion First Section */
+
+/*#region Second Section */
+
+#title {
+	margin-top: 50px;
 }
 
-#galleryIcon, #contactUsIcon {
-	padding: 10px;
+#firstDescription {
+	margin-top: 50px;
 }
 
-@media only screen and (max-width: 650px) {
-	.cards {
-		flex-direction: column;
-		margin: 0;
-	}
+/*#endregion */
 
-	section {
-		margin: 20px;
-	}
-
-	.card {
-		margin: 0;
-		padding: 0;
-	}
-
-	.ViraVira {
-		display: none;
-	}
-
-	.headMessage {
-		display: none;
-	}
-
-	h1 {
-		font-size: 2.5rem;
-	}
-
-	h3 {
-		font-size: 1.2rem;
-	}
-}
-
-@media only all and (max-width: 800px) {
-	.ViraVira {
-		font-size: 3rem;
-	}
-	.headMessage {
-		font-size: 1.3rem;
-		top: calc(10% + 3rem);
-	}
-}
-
-@media only screen and (min-width: 650px) {
-	.cards {
-		flex-direction: row;
-		margin: 25px;
-	}
-
-	section {
-		margin: 70px;
-	}
-
-	.card {
-		margin: 20px;
-		padding: 0 20px;
-	}
-
-	h1 {
-		font-size: 3.125rem;
-	}
-
-	h3 {
-		font-size: 1.5rem;
-	}
-}
+/*#region Card Styling */
 
 .cards {
 	display: flex;
@@ -120,8 +64,6 @@
 	color: var(--primary-font-color);
 	display: flex;
 	flex-direction: column;
-
-	font-family: museo-sans, sans-serif;
 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
@@ -143,7 +85,7 @@
 	text-decoration: none;
 }
 
-.card .title {
+.card .headerTitle {
 	text-transform: uppercase;
 	font-style: normal;
 	font-size: 1.2rem;
@@ -151,58 +93,76 @@
 	border-bottom: 1px solid var(--primary-font-color);
 	text-align: center;
 	text-decoration: none;
+	margin-bottom: 20px;
 }
 
 .card svg, .card img {
 	fill: var(--primary-font-color);
 	width: 75px;
 	margin: 0 auto;
-
 }
 
-section {
-	display: flex;
-	flex-direction: column;
+.card img {
+	width: 75px;
+	box-sizing: border-box;
 }
 
-h1 {
-	text-align: center;
-	line-height: 1.1;
-	font-family: questa, serif;
-	max-width: 60rem;
-	margin: auto;
+#galleryIcon, #contactUsIcon {
+	padding: 15px;
 }
 
-h3 {
-	line-height: 1;
-	font-style: normal;
-	font-weight: 400;
-	font-family: questa, serif;
-	text-align: center;
-	max-width: 60rem;
-	margin: 20px auto;
+/*#endregion Card Section */
+
+/*#region Media Styling */
+
+@media only screen and (max-width: 650px) {
+	.cards {
+		flex-direction: column;
+		margin: 25px 0 0;
+	}
+
+	section {
+		margin: 20px;
+	}
+
+	.card {
+		margin: 20px 0 0;
+		padding: 0;
+	}
+
+	.ViraVira {
+		display: none;
+	}
+
+	.headMessage {
+		display: none;
+	}
 }
 
-section p {
-	line-height: 1.375;
-	font-size: 1rem;
-	font-style: normal;
-	font-weight: 300;
-	font-family: museo-sans, sans-serif;
-	text-align: center;
-	max-width: 60rem;
-	margin: 20px auto;
-
-	text-rendering: optimizeLegibility;
+@media only all and (max-width: 800px) {
+	.ViraVira {
+		font-size: 3rem;
+	}
+	.headMessage {
+		font-size: 1.3rem;
+		top: calc(10% + 3rem);
+	}
 }
 
-h2 {
-	font-size: 2.5rem;
-	line-height: 1.1;
-	font-style: normal;
-	font-weight: 600;
-	font-family: questa, serif;
-	text-align: center;
-	max-width: 40rem;
-	margin: 20px auto;
+@media only screen and (min-width: 650px) {
+	.cards {
+		flex-direction: row;
+		margin: 25px;
+	}
+
+	.card {
+		margin: 20px;
+		padding: 0 20px;
+	}
+
+	section {
+		margin: 70px;
+	}
 }
+
+/*#endregion */

@@ -3,10 +3,6 @@ body {
 	flex-direction: column;
 }
 
-#title {
-	margin-top: 100px;
-}
-
 h2 {
 	margin: 20px auto 0 auto;
 	line-height: 1;

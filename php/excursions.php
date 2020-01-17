@@ -46,12 +46,12 @@ include("../html/header.html");
 	<div class="slider">
 		<div class="slide_viewer">
 			<div class="slide_group">
-				<img src="../img/explore/explore1.jpg" class="slide" alt="Explore 1">
-				<img src="../img/explore/explore2.jpg" class="slide" alt="Explore 2">
-				<img src="../img/explore/explore3.jpg" class="slide" alt="Explore 3">
-				<img src="../img/explore/explore4.jpg" class="slide" alt="Explore 4">
-				<img src="../img/explore/explore5.jpg" class="slide" alt="Explore 5">
-				<img src="../img/explore/explore6.jpg" class="slide" alt="Explore 6">
+				<img src="../img/nature/explore1.jpg" class="slide" alt="Explore 1">
+				<img src="../img/nature/explore2.jpg" class="slide" alt="Explore 2">
+				<img src="../img/nature/explore3.jpg" class="slide" alt="Explore 3">
+				<img src="../img/nature/explore4.jpg" class="slide" alt="Explore 4">
+				<img src="../img/nature/explore5.jpg" class="slide" alt="Explore 5">
+				<img src="../img/nature/explore6.jpg" class="slide" alt="Explore 6">
 			</div>
 		</div>
 	</div>
@@ -98,12 +98,14 @@ include("../html/header.html");
 	<div class="slider">
 		<div class="slide_viewer">
 			<div class="slide_group">
-				<img src="../img/explore/explore1.jpg" class="slide" alt="Explore 1">
-				<img src="../img/explore/explore2.jpg" class="slide" alt="Explore 2">
-				<img src="../img/explore/explore3.jpg" class="slide" alt="Explore 3">
-				<img src="../img/explore/explore4.jpg" class="slide" alt="Explore 4">
-				<img src="../img/explore/explore5.jpg" class="slide" alt="Explore 5">
-				<img src="../img/explore/explore6.jpg" class="slide" alt="Explore 6">
+				<img src="../img/experience/experience-gallery3-2.jpg" class="slide" alt="Experience 1">
+				<img src="../img/experience/experience-gallery3-3.jpg" class="slide" alt="Experience 2">
+				<img src="../img/experience/experience-gallery3-4.jpg" class="slide" alt="Experience 3">
+				<img src="../img/experience/experience-gallery3-5.jpg" class="slide" alt="Experience 4">
+				<img src="../img/experience/experience-gallery3-6.jpg" class="slide" alt="Experience 5">
+				<img src="../img/experience/experience-gallery3-7.jpg" class="slide" alt="Experience 6">
+				<img src="../img/experience/experience-slider3-1.jpg" class="slide" alt="Experience 7">
+				<img src="../img/experience/stand-up-paddle.jpg" class="slide" alt="Stand up Paddle">
 			</div>
 		</div>
 	</div>
@@ -152,12 +154,12 @@ include("../html/header.html");
 	<div class="slider">
 		<div class="slide_viewer">
 			<div class="slide_group">
-				<img src="../img/explore/explore1.jpg" class="slide" alt="Explore 1">
-				<img src="../img/explore/explore2.jpg" class="slide" alt="Explore 2">
-				<img src="../img/explore/explore3.jpg" class="slide" alt="Explore 3">
-				<img src="../img/explore/explore4.jpg" class="slide" alt="Explore 4">
-				<img src="../img/explore/explore5.jpg" class="slide" alt="Explore 5">
-				<img src="../img/explore/explore6.jpg" class="slide" alt="Explore 6">
+				<img src="../img/yoga/experience1.jpg" class="slide" alt="Experience 1">
+				<img src="../img/yoga/experience2.jpg" class="slide" alt="Experience 2">
+				<img src="../img/yoga/experience3.jpg" class="slide" alt="Experience 3">
+				<img src="../img/yoga/experience4.jpg" class="slide" alt="Experience 4">
+				<img src="../img/yoga/experience5.jpg" class="slide" alt="Experience 5">
+				<img src="../img/yoga/yoga-experience.jpg" class="slide" alt="Yoga Experience">
 			</div>
 		</div>
 	</div>

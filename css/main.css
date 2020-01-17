@@ -1,3 +1,5 @@
+/*#region Initialization */
+
 :root {
 	--background-color: #FDFDFDFF;
 	--primary-font-color: #424241;
@@ -19,3 +21,222 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
+/*#endregion Initialization */
+
+/*#region global styling */
+
+body {
+	margin: auto;
+	text-align: center;
+	font-family: museo-sans, sans-serif;
+}
+
+p {
+	text-rendering: optimizeLegibility;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+h1 {
+	margin: 100px auto auto auto;
+	text-align: center;
+	font-family: questa, serif;
+}
+
+h2 {
+	margin: 20px auto auto auto;
+	text-align: center;
+	font-family: museo-sans, sans-serif;
+}
+
+h3 {
+	margin: 20px auto auto auto;
+	text-align: center;
+	font-family: museo-sans, sans-serif;
+}
+
+h4 {
+	margin: 20px auto auto  auto;
+	text-align: center;
+	font-family: museo-sans, sans-serif;
+	font-weight: 500;
+	border-bottom: 1px solid var(--primary-font-color);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+	body {
+		font-size: 1em;
+		line-height: 1.25em;
+	}
+
+	p {
+		width: 90%;
+	}
+
+	h1 {
+		font-size: 2em;
+		line-height: 1.25em;
+	}
+
+	h2 {
+		font-size: 1.625em;
+		line-height: 1.15384615em;
+	}
+
+	h3 {
+		font-size: 1.375em;
+		line-height: 1.136363636em;
+	}
+
+	h4 {
+		font-size: 1.125em;
+		line-height: 1.1111111em;
+		width: 90%;
+		padding: 0 0 20px 0;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+	body {
+		font-size: 1em;
+		line-height: 1.25em;
+	}
+
+	p {
+		width: 85%;
+	}
+
+	h1 {
+		font-size: 2em;
+		line-height: 1.25em;
+	}
+
+	h2 {
+		font-size: 1.625em;
+		line-height: 1.15384615em;
+	}
+
+	h3 {
+		font-size: 1.375em;
+		line-height: 1.136363636em;
+	}
+
+	h4 {
+		font-size: 1.125em;
+		line-height: 1.1111111em;
+		width: 80%;
+		padding: 0 3% 20px 3%;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+	body {
+		font-size: 1em;
+		line-height: 1.375em;
+	}
+
+	p {
+		width: 80%;
+	}
+
+	h1 {
+		font-size: 2.5em;
+		line-height: 1.125em;
+	}
+
+	h2 {
+		font-size: 2em;
+		line-height: 1.25em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		line-height: 1.25em;
+	}
+
+	h4 {
+		font-size: 1.125em;
+		line-height: 1.22222222em;
+		width: 80%;
+		padding: 0 5% 20px 5%;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+	body {
+		font-size: 1em;
+		line-height: 1.375em;
+	}
+
+	p {
+		width: 60%;
+	}
+
+	h1 {
+		font-size: 3em;
+		line-height: 1.05em;
+	}
+
+	h2 {
+		font-size: 2.25em;
+		line-height: 1.25em;
+	}
+
+	h3 {
+		font-size: 1.75em;
+		line-height: 1.25em;
+	}
+
+	h4 {
+		font-size: 1.125em;
+		line-height: 1.22222222em;
+		width: 60%;
+		padding: 0 10% 20px 10%;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+	body {
+		font-size: 1em;
+		line-height: 1.375em;
+	}
+
+	p {
+		width: 50%;
+	}
+
+	h1 {
+		font-size: 3em;
+		line-height: 1.05em;
+	}
+
+	h2 {
+		font-size: 2.25em;
+		line-height: 1.25em;
+	}
+
+	h3 {
+		font-size: 1.75em;
+		line-height: 1.25em;
+	}
+
+	h4 {
+		font-size: 1.125em;
+		line-height: 1.22222222em;
+	}
+}
+
+/*#endregion */

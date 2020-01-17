@@ -23,13 +23,9 @@
 
 <body>
 
-<div class="header">
-	<div class="headerContent">
-		<label for="menuInput"></label>
-		<input type="checkbox" id="menuInput"/>
-
+<header class="header">
 		<!-- Hamburger Buns and Patties -->
-		<div class="hamburgerButton">
+		<div id="hamburgerButton">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -57,47 +53,46 @@
 				</li>
 			</ul>
 		</nav>
-		<p class="title">Vira Vira</p>
+		<p class="headerTitle">Vira Vira</p>
 		<a href="index.php" class="navigationLogo">
 			<img src="img/LOGO.svg" alt="Hotel Vira Vira logo"/>
 		</a>
+</header>
+
+
+<div class="firstSection">
+	<img class="backgroundImage" src="img/hotel-at-night.jpg" alt="Hotel At Night"/>
+	<div class="welcomeContainer">
+		<h2 data-aos="fade-left" data-aos-duration="2000" class="ViraVira">Vira Vira</h2>
+		<h3 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" class="headMessage">
+			A beautiful lodge on an organic farm in the chilean lake district
+		</h3>
 	</div>
 </div>
-
-
-<div class="welcomeContainer">
-	<img class="backgroundImage" src="img/hotel-at-night.jpg" alt="Hotel At Night"/>
-	<h2 data-aos="fade-left" data-aos-duration="2000" class="ViraVira">Vira Vira</h2>
-	<p data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" class="headMessage">
-		A beautiful lodge on an organic farm in the chilean lake district
-	</p>
-</div>
-<section>
-	<h1>
-		Welcome to Vira Vira
-	</h1>
-	<h3 class="headerDescription">
-		Located in the picturesque Araucanía region of Chile’s Lake District, homeland of the courageous Mapuche people,
-		is a spectacular 22-hectare (34-acre) estate: Vira Vira. Dramatic landscapes of breathtaking glacial lakes
-		mirror the snowy tips of nearby volcanoes, while within the rainforests gracing the surrounding national parks,
-		evergreen Araucaria araucana (monkey puzzle) trees, some over 1 000 years old, stand tall. This region is both
-		the gateway to Patagonia, and a thrilling adventure haven.
-	</h3>
-	<p class="description">
-		Immersed on an expansive, forested estate with 822 m (2 696 ft) of river frontage and breathtaking views of the
-		snow-capped Villarica Volcano, this magnificent wooden lodge is themed in beauty. Enormous windows frame
-		exquisite outlooks, while vibrant wall tapestries, hand-woven textiles and other traditional artefacts colour
-		the interior décor. Signature features include a modern working farm, organic farm-to-table vegetable garden,
-		on-site boutique cheese factory and two outdoor hot tubs.
-	</p>
-	<p class="description">
-		Ideally appointed accommodation, overlooking either the estate surrounds or the Liucura River, includes six cosy
-		suites, 12 split-level villas with a separate living room, and a five-bedroom, sole-use Hacienda for up to 10
-		guests. Ensuite bathrooms include a separate bath and walk-in shower. Floor to ceiling windows fills the
-		spacious wooden interiors with natural light. Each guest unit is individually decorated with a selection of
-		curated objects and richly-textured rugs, wall hangings and fabric.
-	</p>
-</section>
+<h1 id="title">
+	Welcome to Vira Vira
+</h1>
+<h4>
+	Located in the picturesque Araucanía region of Chile’s Lake District, homeland of the courageous Mapuche people,
+	is a spectacular 22-hectare (34-acre) estate: Vira Vira. Dramatic landscapes of breathtaking glacial lakes
+	mirror the snowy tips of nearby volcanoes, while within the rainforests gracing the surrounding national parks,
+	evergreen Araucaria araucana (monkey puzzle) trees, some over 1 000 years old, stand tall. This region is both
+	the gateway to Patagonia, and a thrilling adventure haven.
+</h4>
+<p id="firstDescription">
+	Immersed on an expansive, forested estate with 822 m (2 696 ft) of river frontage and breathtaking views of the
+	snow-capped Villarica Volcano, this magnificent wooden lodge is themed in beauty. Enormous windows frame
+	exquisite outlooks, while vibrant wall tapestries, hand-woven textiles and other traditional artefacts colour
+	the interior décor. Signature features include a modern working farm, organic farm-to-table vegetable garden,
+	on-site boutique cheese factory and two outdoor hot tubs.
+</p>
+<p>
+	Ideally appointed accommodation, overlooking either the estate surrounds or the Liucura River, includes six cosy
+	suites, 12 split-level villas with a separate living room, and a five-bedroom, sole-use Hacienda for up to 10
+	guests. Ensuite bathrooms include a separate bath and walk-in shower. Floor to ceiling windows fills the
+	spacious wooden interiors with natural light. Each guest unit is individually decorated with a selection of
+	curated objects and richly-textured rugs, wall hangings and fabric.
+</p>
 <section>
 	<h2>
 		Explore Vira Vira
@@ -195,10 +190,12 @@
 		src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		crossorigin="anonymous"></script>
+
 <script type="text/javascript">
     AOS.init();
-
 </script>
+
+<script src="js/header.js"></script>
 
 </body>
 </html>
