@@ -142,14 +142,12 @@ header a {
 
 	.header .headerTitle {
 		font-size: 2.5rem;
-		top: calc((var(--header-height) - 46px) / 2);
 	}
 }
 
 @media all and (max-width: 350px) {
 	.header .headerTitle {
 		font-size: 1.75rem;
-		top: calc((var(--header-height) - 32px) / 2);
 	}
 }
 
