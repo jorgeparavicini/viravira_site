@@ -9,19 +9,19 @@
           content="Hotel Vira Vira give life to a new way of enjoying holidays, combined with adventure.
          In a unique and privileged location close to Pucon.">
 
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="apple-touch-icon" href="/img/icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="apple-touch-icon" href="../img/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fafafa">
 
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 
 <body>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
+include("../html/header.html");
 ?>
 
 <h1>Contact</h1>
@@ -55,9 +55,8 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
         <label for="subject"></label>
         <input id="subject" type="text" placeholder="Subject">
         <label for="query"></label>
-        <textarea id="query" placeholder="We're happy to answer any Questions you may have.">
-        </textarea>
+        <textarea id="query" placeholder="We're happy to answer any Questions you may have."></textarea>
     </form>
 </div>
-<img src="/img/howToReachHotel.jpg" alt="Description of how to reach the Hotel" id="route">
+<img src="../img/howToReachHotel.jpg" alt="Description of how to reach the Hotel" id="route">
 </body>

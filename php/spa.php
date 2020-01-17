@@ -9,19 +9,20 @@
 	      content="Hotel Vira Vira give life to a new way of enjoying holidays, combined with adventure.
          In a unique and privileged location close to Pucon.">
 
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="apple-touch-icon" href="/img/icon.png">
+	<link rel="manifest" href="../site.webmanifest">
+	<link rel="apple-touch-icon" href="../img/icon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#fafafa">
 
-	<link rel="stylesheet" href="/css/main.css">
-	<link rel="stylesheet" href="/css/spa.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/spa.css">
+	<link rel="stylesheet" href="../css/gallerySlideshow.css">
 </head>
 
 <body>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
+include("../html/header.html");
 ?>
 
 <section id="wellness">
@@ -38,10 +39,10 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
 	<div class="slider">
 		<div class="slide_viewer">
 			<div class="slide_group">
-				<img src="/img/spa1.jpg" class="slide" alt="Spa 1">
-				<img src="/img/spa2.jpg" class="slide" alt="Spa 2">
-				<img src="/img/spa3.jpg" class="slide" alt="Spa 3">
-				<img src="/img/spa4.jpg" class="slide" alt="Spa 4">
+				<img src="../img/spa1.jpg" class="slide" alt="Spa 1">
+				<img src="../img/spa2.jpg" class="slide" alt="Spa 2">
+				<img src="../img/spa3.jpg" class="slide" alt="Spa 3">
+				<img src="../img/spa4.jpg" class="slide" alt="Spa 4">
 			</div>
 		</div>
 	</div>
@@ -75,100 +76,9 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
 			</svg>
 		</div>
 	</div>
-
 </section>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-<script>
-    $('.slider').each(function() {
-        let $this = $(this);
-        let $group = $this.find('.slide_group');
-        let $slides = $this.find('.slide');
-        let bulletArray = [];
-        let currentIndex = 0;
-        let timeout;
-
-        function move(newIndex) {
-            let animateLeft, slideLeft;
-
-            advance();
-
-            if ($group.is(':animated') || currentIndex === newIndex) {
-                return;
-            }
-
-            bulletArray[currentIndex].removeClass('active');
-            bulletArray[newIndex].addClass('active');
-
-            if (newIndex > currentIndex) {
-                slideLeft = '100%';
-                animateLeft = '-100%';
-            } else {
-                slideLeft = '-100%';
-                animateLeft = '100%';
-            }
-
-            $slides.eq(newIndex).css({
-                display: 'block',
-                left: slideLeft
-            });
-            $group.animate({
-                left: animateLeft
-            }, function() {
-                $slides.eq(currentIndex).css({
-                    display: 'none'
-                });
-                $slides.eq(newIndex).css({
-                    left: 0
-                });
-                $group.css({
-                    left: 0
-                });
-                currentIndex = newIndex;
-            });
-        }
-
-        function advance() {
-            clearTimeout(timeout);
-            timeout = setTimeout(function() {
-                if (currentIndex < ($slides.length - 1)) {
-                    move(currentIndex + 1);
-                } else {
-                    move(0);
-                }
-            }, 4000);
-        }
-
-        $('.next_btn').on('click', function() {
-            if (currentIndex < ($slides.length - 1)) {
-                move(currentIndex + 1);
-            } else {
-                move(0);
-            }
-        });
-
-        $('.previous_btn').on('click', function() {
-            if (currentIndex !== 0) {
-                move(currentIndex - 1);
-            } else {
-                move(3);
-            }
-        });
-
-        $.each($slides, function(index) {
-            let $button = $('<a class="slide_btn">&bull;</a>');
-
-            if (index === currentIndex) {
-                $button.addClass('active');
-            }
-            $button.on('click', function() {
-                move(index);
-            }).appendTo('.slide_buttons');
-            bulletArray.push($button);
-        });
-
-        advance();
-    });
-</script>
+<script src="../js/gallery.js"></script>
 </body>

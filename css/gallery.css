@@ -1,0 +1,53 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+#title {
+	margin-top: 100px;
+}
+
+h2 {
+	margin: 20px auto 0 auto;
+	line-height: 1;
+	font-style: normal;
+	font-weight: 400;
+	font-family: questa, serif;
+	text-align: center;
+	max-width: 60rem;
+	font-size: 2rem;
+}
+
+#highlights {
+	position: relative;
+	margin: 40px 0;
+	height: 500px;
+}
+
+#highlights img {
+	object-fit: cover;
+}
+
+#gallery {
+	margin: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+#gallery a {
+
+}
+
+#gallery a:hover img{
+	box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+#gallery img {
+	margin-top: 10px;
+	height: 200px;
+	width: 355px;
+	object-fit: contain;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+}

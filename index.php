@@ -14,20 +14,59 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#fafafa">
 
-	<link rel="stylesheet" href="/css/main.css">
-	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/header.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
 
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
-?>
+<div class="header">
+	<div class="headerContent">
+		<label for="menuInput"></label>
+		<input type="checkbox" id="menuInput"/>
+
+		<!-- Hamburger Buns and Patties -->
+		<div class="hamburgerButton">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<nav id="menuNav">
+			<ul id="menu">
+				<li>
+					<a href="index.php">Home</a>
+				</li>
+				<li>
+					<a href="php/location.php">Location</a>
+				</li>
+				<li>
+					<a href="php/excursions.php">Excursions</a>
+				</li>
+				<li>
+					<a href="php/spa.php">Spa</a>
+				</li>
+				<li>
+					<a href="php/gallery.php">Gallery</a>
+				</li>
+				<li>
+					<a href="php/contact.php">Contact</a>
+				</li>
+			</ul>
+		</nav>
+		<p class="title">Vira Vira</p>
+		<a href="index.php" class="navigationLogo">
+			<img src="img/LOGO.svg" alt="Hotel Vira Vira logo"/>
+		</a>
+	</div>
+</div>
+
 
 <div class="welcomeContainer">
-	<img class="backgroundImage" src="/img/hotel-at-night.jpg" alt="Hotel At Night"/>
+	<img class="backgroundImage" src="img/hotel-at-night.jpg" alt="Hotel At Night"/>
 	<h2 data-aos="fade-left" data-aos-duration="2000" class="ViraVira">Vira Vira</h2>
 	<p data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" class="headMessage">
 		A beautiful lodge on an organic farm in the chilean lake district
@@ -64,7 +103,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
 		Explore Vira Vira
 	</h2>
 	<div class="cards">
-		<a class="card" href="/php/location.php">
+		<a class="card" href="php/location.php">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
 				<path d="M315.85 501.31c-19.76 0-35.84 15.52-35.84
             34.62s16.09 34.62 35.84 34.62 35.85-15.53
@@ -94,7 +133,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
 				followed by a transfer (road/helicopter) to the lodge
 			</div>
 		</a>
-		<a class="card" href="/php/excursions.php">
+		<a class="card" href="php/excursions.php">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
 				<defs></defs>
 				<path d="M263.51 659.89a36.68 36.68 0 1 1 36.67-36.67 36.66 36.66 0 0 1-36.67 36.67m-.23-103.41a66.73 66.73 0 1 0 66.48 66.74 66.62 66.62 0 0 0-66.48-66.74"
@@ -116,7 +155,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
 				Skiing, snowboarding, snowshoeing, snowmobiling &amp; dog sledding
 			</div>
 		</a>
-		<a class="card" href="/php/spa.php">
+		<a class="card" href="php/spa.php">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
 				<defs></defs>
 				<path d="M724.47 527.35c-61.07 7.37-142.12 11.43-228.21 11.43S329.12 534.71 268 527.35c-30.28-3.65-54.25-8-71.24-12.81l-.53-.15a7.27 7.27 0 0 0-8.91 9.33c44.21 128 165.73 219.88 308.72 219.88s264.44-91.86 308.68-219.77a7.27 7.27 0 0 0-8.91-9.33h-.15c-16.94 4.88-40.91 9.19-71.19 12.85zM495.09 686.74a4.68 4.68 0 0 1-3.59 1.71 4.78 4.78 0 0 1-.7-.06c-11.71-1.78-33.63-7.13-49-23s-20.57-38.53-22.3-50.63a5 5 0 0 1 1.1-3.93 4.68 4.68 0 0 1 4.29-1.65c11.71 1.78 33.63 7.13 49 23s20.57 38.53 22.3 50.63a5 5 0 0 1-1.1 3.93zm2.74-27.58c-3.72-10.78-9.61-22.46-19-32.11a71.3 71.3 0 0 0-6.9-6.24 2.3 2.3 0 0 1-.84-2.15c4.71-29.36 24.71-51.28 25.67-52.31a4.18 4.18 0 0 1 6.17 0c1 1 21 22.95 25.67 52.31a2.29 2.29 0 0 1-.84 2.15 71.77 71.77 0 0 0-6.9 6.24c-9.35 9.65-15.25 21.33-19 32.11a2.15 2.15 0 0 1-4.03 0zm82.47-44.42c-1.74 12.1-6.94 34.76-22.3 50.61s-37.31 21.23-49 23a4.92 4.92 0 0 1-.7.06 4.67 4.67 0 0 1-3.59-1.71 5 5 0 0 1-1.11-3.92c1.72-12.08 6.91-34.72 22.31-50.62s37.31-21.23 49-23a4.7 4.7 0 0 1 4.3 1.65 5 5 0 0 1 1.09 3.94z"
@@ -132,15 +171,15 @@ include($_SERVER['DOCUMENT_ROOT'] . "/html/header.html");
 				Farm-to-table dining
 			</div>
 		</a>
-		<a class="card" href="/php/gallery.php">
-			<img src="/img/gallery.svg" alt="Gallery Icon" id="galleryIcon">
+		<a class="card" href="php/gallery.php">
+			<img src="img/gallery.svg" alt="Gallery Icon" id="galleryIcon">
 			<h3 class="title">Gallery</h3>
 			<div class="excerpt">
 				Visit our gallery
 			</div>
 		</a>
-		<a class="card" href="/php/contact.php">
-			<img src="/img/contactUs.svg" alt="Contact Us" id="contactUsIcon">
+		<a class="card" href="php/contact.php">
+			<img src="img/contactUs.svg" alt="Contact Us" id="contactUsIcon">
 			<h3 class="title">Contact</h3>
 			<div class="excerpt">
 				Do you have any questions? <br>
