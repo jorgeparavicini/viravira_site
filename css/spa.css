@@ -19,11 +19,6 @@
 	color: var(--primary-accent-color);
 }
 
-#wellness p, #wellness h2 {
-	text-align: center;
-	margin: 0;
-}
-
 @media only screen and (min-width: 768px) {
 	#wellness div {
 		width: 50%;

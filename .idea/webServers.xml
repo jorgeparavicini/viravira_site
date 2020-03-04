@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="50f39333-5a2d-4485-9ace-8c78a1795d13" name="Vira Vira" url="http://localhost">
+      <webServer id="50f39333-5a2d-4485-9ace-8c78a1795d13" name="Vira Vira" url="http://viravira.com">
         <fileTransfer port="0" mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
       </webServer>
       <webServer id="2b8decdc-1b6f-40dd-b76f-b67269133dd2" name="Vira Vira Release" url="http://srv107.ict-campus.net">

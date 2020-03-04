@@ -24,39 +24,39 @@
 <body>
 
 <header class="header">
-		<!-- Hamburger Buns and Patties -->
-		<div id="hamburgerButton">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
+	<!-- Hamburger Buns and Patties -->
+	<div id="hamburgerButton">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
 
-		<nav id="menuNav">
-			<ul id="menu">
-				<li>
-					<a href="index.php">Home</a>
-				</li>
-				<li>
-					<a href="php/location.php">Location</a>
-				</li>
-				<li>
-					<a href="php/excursions.php">Excursions</a>
-				</li>
-				<li>
-					<a href="php/spa.php">Spa</a>
-				</li>
-				<li>
-					<a href="php/gallery.php">Gallery</a>
-				</li>
-				<li>
-					<a href="php/contact.php">Contact</a>
-				</li>
-			</ul>
-		</nav>
-		<p class="headerTitle">Vira Vira</p>
-		<a href="index.php" class="navigationLogo">
-			<img src="img/LOGO.svg" alt="Hotel Vira Vira logo"/>
-		</a>
+	<nav id="menuNav">
+		<ul id="menu">
+			<li>
+				<a href="index.php">Home</a>
+			</li>
+			<li>
+				<a href="php/location.php">Location</a>
+			</li>
+			<li>
+				<a href="php/excursions.php">Excursions</a>
+			</li>
+			<li>
+				<a href="php/spa.php">Spa</a>
+			</li>
+			<li>
+				<a href="php/gallery.php">Gallery</a>
+			</li>
+			<li>
+				<a href="php/contact.php">Contact</a>
+			</li>
+		</ul>
+	</nav>
+	<p class="headerTitle">Vira Vira</p>
+	<a href="index.php" class="navigationLogo">
+		<img src="img/LOGO.svg" alt="Hotel Vira Vira logo"/>
+	</a>
 </header>
 
 

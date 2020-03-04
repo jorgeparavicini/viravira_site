@@ -81,7 +81,6 @@ include("../html/header.html");
 					</g>
 				</g>
 			</svg>
-
 		</div>
 	</div>
 </section>
