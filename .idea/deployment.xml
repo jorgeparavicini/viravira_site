@@ -5,7 +5,7 @@
       <paths name="Vira Vira">
         <serverdata>
           <mappings>
-            <mapping deploy="ViraVira" local="$PROJECT_DIR$" web="ViraVira" />
+            <mapping deploy="ViraVira" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

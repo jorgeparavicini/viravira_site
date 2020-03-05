@@ -10,7 +10,7 @@ function initializeGallery(i, gallery) {
 
         advance();
 
-        if ($group.is(':animated') || currentIndex[i] === newIndex) {
+        if ($group.is(':animated') || currentIndex[i] === newIndex || $slides.length === 1) {
             return;
         }
 

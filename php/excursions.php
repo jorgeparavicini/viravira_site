@@ -192,6 +192,35 @@ include("../html/header.html");
 	</div>
 </section>
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+
+$conn = new mysqli($servername, $username, $password);
+
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+$sql = "SELECT * FROM excursion";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+	while ($row = $result->fetch_assoc()) {
+		echo "Exkursion ID:" . $row["ID_EXKURSION"] . " - Start: " . $row["ExkursionStart"] . "<br>";
+	}
+} else {
+	echo "0 results";
+}
+$conn->close();
+?>
+
+<form action="excursion_detail.php" method="post">
+	<input name="id" type="submit" value="232"/>
+</form>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
