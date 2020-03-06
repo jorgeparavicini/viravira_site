@@ -8,19 +8,26 @@
 	--secondary-background-color: #1A1F16;
 	--menu-background-color: #122C34;
 	--overlay-color: rgba(35,22,0,0.78);
+	--footer-height: 80px;
+	--header-height: 80px;
 }
 
-html {
+html, body {
 	background-color: var(--background-color);
 	margin: 0;
 	padding: 0;
 	color: var(--primary-font-color);
+	height: 100%;
 }
 
-body {
-	margin: 0;
-	padding: 0;
+#content {
+	min-height: calc(100% - var(--header-height) - var(--footer-height));
+	padding-top: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
+
 
 /*#endregion Initialization */
 
@@ -41,7 +48,6 @@ p {
 }
 
 h1 {
-	margin: 100px auto auto auto;
 	text-align: center;
 	font-family: questa, serif;
 }

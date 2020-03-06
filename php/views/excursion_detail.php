@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Excursion | Hotel Vira Vira</title>
-
-	<meta name="description"
-	      content="Hotel Vira Vira give life to a new way of enjoying holidays, combined with adventure.
-         In a unique and privileged location close to Pucon.">
-
-	<link rel="manifest" href="../site.webmanifest">
-	<link rel="apple-touch-icon" href="../img/icon.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#fafafa">
-
-	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../css/excursion_detail.css">
-	<link rel="stylesheet" href="../css/gallerySlideshow.css">
-</head>
-<body>
 <?php
-include("../html/header.html");
-?>
-<?php
-include_once("slideshow.php");
+include_once("${$_SERVER['DOCUMENT_ROOT']}/php/controls/slideshow.php");
 
 $id = $_GET['id'];
 
@@ -44,7 +21,7 @@ $details = getDetails($id, $conn);
 $images = getImages($id, $conn);
 
 if ($result->num_rows != 1 || !array_key_exists("Description", $descriptions)) {
-    include("../html/excursion_not_found.html");
+    echo "<h1>Excursion not found</h1>";
 } else {
     $excursion = $result->fetch_assoc();
 // Display page
@@ -78,12 +55,17 @@ if ($result->num_rows != 1 || !array_key_exists("Description", $descriptions)) {
         }
         ?>
 	</div>
-	<h2>Gallery</h2>
-    <?php
-    $images = array_map(function ($image) {
-        return "../img/excursions/{$image[0]}";
-    }, $images);
-    createSlideshow($images, "excursions");
+	<?php
+	if (count($images) > 0) {
+		?>
+        <h2>Gallery</h2>
+        <?php
+        $images = array_map(function ($image) {
+            return "/img/excursions/{$image[0]}";
+        }, $images);
+        createSlideshow($images, "excursions");
+	}
+
     $conn->close();
 }
 
@@ -138,11 +120,10 @@ function getImages($id, mysqli $conn)
     return $images;
 }
 
+
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-<script src="../js/gallery.js"></script>
-</body>
-</html>
+<script src="/js/gallery.js"></script>

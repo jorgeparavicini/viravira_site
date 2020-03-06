@@ -1,24 +1,3 @@
-body {
-	display: flex;
-	flex-direction: column;
-}
-
-h2 {
-	margin: 20px auto 0 auto;
-	line-height: 1;
-	font-style: normal;
-	font-weight: 400;
-	font-family: questa, serif;
-	text-align: center;
-	max-width: 60rem;
-	font-size: 2rem;
-}
-
-#highlights {
-	position: relative;
-	margin: 40px 0;
-}
-
 #gallery {
 	margin: 40px;
 	display: flex;

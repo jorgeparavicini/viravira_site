@@ -1,9 +1,7 @@
 /*#region First section */
 
 .firstSection {
-	margin-top: 80px;
 	position: relative;
-	z-index: -2;
 }
 
 .backgroundImage {
@@ -96,7 +94,7 @@
 }
 
 .card svg, .card img {
-	fill: var(--primary-font-color);
+	filter: invert(22%) sepia(4%) saturate(268%) hue-rotate(22deg) brightness(96%) contrast(85%);
 	width: 75px;
 	margin: 0 auto;
 }

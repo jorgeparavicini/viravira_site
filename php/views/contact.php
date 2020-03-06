@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Contact | Hotel Vira Vira</title>
-
-    <meta name="description"
-          content="Hotel Vira Vira give life to a new way of enjoying holidays, combined with adventure.
-         In a unique and privileged location close to Pucon.">
-
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="apple-touch-icon" href="../img/icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#fafafa">
-
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/contact.css">
-</head>
-
-<body>
-
-<?php
-include("../html/header.html");
-?>
-
 <h1>Contact</h1>
 <div id="contactGrid">
     <div id="leftSide">
@@ -58,5 +32,4 @@ include("../html/header.html");
         <textarea id="query" placeholder="We're happy to answer any Questions you may have."></textarea>
     </form>
 </div>
-<img src="../img/howToReachHotel.jpg" alt="Description of how to reach the Hotel" id="route">
-</body>
+<img src="/img/howToReachHotel.jpg" alt="Description of how to reach the Hotel" id="route">

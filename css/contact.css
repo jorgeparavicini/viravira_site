@@ -4,7 +4,6 @@
 }
 
 #contactGrid {
-	margin-top: 40px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
@@ -23,7 +22,6 @@
 }
 
 h1 {
-	margin-top: 100px;
 	text-align: center;
 	line-height: 1.1;
 	font-family: questa, serif;

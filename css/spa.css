@@ -1,5 +1,4 @@
 #wellness {
-	margin-top: 80px;
 	height: 80vh;
 	background-image: url("../img/spa-bed.jpg");
 	background-repeat: no-repeat;
@@ -26,11 +25,5 @@
 }
 
 #gallery {
-	position: relative;
-	margin: 40px 0;
-	height: 500px;
-}
-
-#gallery img {
-	object-fit: cover;
+	margin-bottom: 20px;
 }

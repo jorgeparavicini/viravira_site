@@ -1,30 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<title>Spa | Hotel Vira Vira</title>
-
-	<meta name="description"
-	      content="Hotel Vira Vira give life to a new way of enjoying holidays, combined with adventure.
-         In a unique and privileged location close to Pucon.">
-
-	<link rel="manifest" href="../site.webmanifest">
-	<link rel="apple-touch-icon" href="../img/icon.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#fafafa">
-
-	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../css/spa.css">
-	<link rel="stylesheet" href="../css/gallerySlideshow.css">
-</head>
-
-<body>
-
-<?php
-include("../html/header.html");
-?>
-
 <section id="wellness">
 	<div>
 		<h2>Wellness</h2>
@@ -39,10 +12,10 @@ include("../html/header.html");
 	<div class="slider">
 		<div class="slide_viewer">
 			<div class="slide_group">
-				<img src="../img/spa1.jpg" class="slide" alt="Spa 1">
-				<img src="../img/spa2.jpg" class="slide" alt="Spa 2">
-				<img src="../img/spa3.jpg" class="slide" alt="Spa 3">
-				<img src="../img/spa4.jpg" class="slide" alt="Spa 4">
+				<img src="../../img/spa1.jpg" class="slide" alt="Spa 1">
+				<img src="../../img/spa2.jpg" class="slide" alt="Spa 2">
+				<img src="../../img/spa3.jpg" class="slide" alt="Spa 3">
+				<img src="../../img/spa4.jpg" class="slide" alt="Spa 4">
 			</div>
 		</div>
 	</div>
@@ -78,5 +51,4 @@ include("../html/header.html");
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-<script src="../js/gallery.js"></script>
-</body>
+<script src="../../js/gallery.js"></script>
