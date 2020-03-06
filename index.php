@@ -33,7 +33,6 @@ if (!empty($path) && $path !== "/") {
         case '/contact':
             build("contact.php");
             break;
-
         case '/login':
             build("login.php");
             break;
