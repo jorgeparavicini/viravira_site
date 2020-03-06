@@ -34,6 +34,18 @@ if (!empty($path) && $path !== "/") {
             build("contact.php");
             break;
 
+        case '/login':
+            build("login.php");
+            break;
+
+        case '/authenticate':
+            include_once "php/views/authenticate.php";
+            break;
+
+        case '/edit':
+            build("excursion_editor.php");
+            break;
+
 		default:
 			build("404.php");
 			break;
