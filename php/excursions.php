@@ -191,37 +191,68 @@ include("../html/header.html");
 		</div>
 	</div>
 </section>
+<h2>Explore our Excursions</h2>
 
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "1234";
+$db = "viravira";
 
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $db);
 
 if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
 
-$sql = "SELECT * FROM excursion";
-$result = $conn->query($sql);
+$allExcursions = getOrderedExcursions($conn);
 
-if ($result->num_rows > 0) {
-	while ($row = $result->fetch_assoc()) {
-		echo "Exkursion ID:" . $row["ID_EXKURSION"] . " - Start: " . $row["ExkursionStart"] . "<br>";
-	}
+if (count($allExcursions) > 0) {
+    foreach ($allExcursions as $type => $excursions) {
+        ?>
+		<h3><?php echo $type ?></h3>
+		<div class="cards">
+            <?php
+            $count = 0;
+            foreach ($excursions as $excursion) {
+                $count++;
+                ?>
+				<a class="card excursion"
+				   href="excursion_detail.php?id=<?php echo $excursion['excursion_id'] ?>">
+					<img src="../img/excursions/<?php echo $excursion['thumbnail_url'] ?>"
+					     alt="<?php echo "{$type}{$count}" ?>"/>
+					<p><?php echo $excursion['title'] ?></p>
+				</a>
+                <?php
+            }
+            ?>
+		</div>
+        <?php
+    }
 } else {
-	echo "0 results";
+    echo "<p>Could not find any excursions.</p>";
 }
 $conn->close();
+
+function getOrderedExcursions(mysqli $conn)
+{
+    $sql = "SELECT * FROM excursion";
+    $result = $conn->query($sql);
+
+    $excursions = [];
+    while ($row = $result->fetch_assoc()) {
+        $type = $row['type'];
+        if (!array_key_exists($type, $excursions)) {
+            $excursions[$type] = [$row];
+        } else {
+            array_push($excursions[$type], $row);
+        }
+    }
+
+    return $excursions;
+}
+
 ?>
-
-<form action="excursion_detail.php" method="post">
-	<input name="id" type="submit" value="232"/>
-</form>
-
-
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>

@@ -80,20 +80,19 @@
 .card .excerpt {
 	width: 160px;
 	text-align: center;
-	margin: 0 auto;
-	padding-bottom: 10px;
+	margin: auto;
+	padding: 10px 0;
 	text-decoration: none;
 }
 
-.card .headerTitle {
+.card .title {
 	text-transform: uppercase;
 	font-style: normal;
 	font-size: 1.2rem;
 	letter-spacing: 2px;
-	border-bottom: 1px solid var(--primary-font-color);
 	text-align: center;
 	text-decoration: none;
-	margin-bottom: 20px;
+	margin: 20px 0 0 0;
 }
 
 .card svg, .card img {

@@ -22,7 +22,9 @@
 include("../html/header.html");
 ?>
 <?php
-$id = $_POST['id'];
+include_once("slideshow.php");
+
+$id = $_GET['id'];
 
 $servername = "localhost";
 $username = "root";
@@ -50,6 +52,19 @@ if ($result->num_rows != 1 || !array_key_exists("Description", $descriptions)) {
 	<h1><?php echo $excursion['title'] ?></h1>
 	<p class="description"><?php echo $descriptions["Description"] ?></p>
 	<img src="../img/excursions/<?php echo $excursion['thumbnail_url'] ?>" alt="Excursion Thumbnail" id="thumbnail">
+
+    <?php
+    // Print optional descriptions like prerequisites
+    foreach ($descriptions as $header => $description) {
+        if (strtolower($header) == "description") continue;
+        ?>
+		<h2><?php echo $header ?></h2>
+		<p><?php echo $description ?></p>
+        <?php
+    }
+    ?>
+
+	<h2>Details</h2>
 	<div class="details">
         <?php
         foreach ($details as $key => $value) {
@@ -64,55 +79,12 @@ if ($result->num_rows != 1 || !array_key_exists("Description", $descriptions)) {
         ?>
 	</div>
 	<h2>Gallery</h2>
-	<section id="culture" class="gallery">
-		<div class="slider">
-			<div class="slide_viewer">
-				<div class="slide_group">
-                    <?php
-                    $count = 0;
-                    foreach ($images as $image) {
-                        ?>
-						<img src="../img/excursions/<?php echo $image[0] ?>"
-						     alt="<?php echo "{$excursion['title']} {$count}" ?>"
-						     class="slide"
-                        <?php
-	                    $count++;
-                    }
-                    ?>
-				</div>
-			</div>
-		</div>
-		<div class="directional_nav">
-			<div class="previous_btn" title="Previous">
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px"
-				     viewBox="0 0 477.175 477.175" xml:space="preserve"
-				     width="512px" height="512px">
-				<g>
-					<g>
-						<path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225   c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"
-						      class="active-path" fill="#424241"/>
-					</g>
-				</g>
-			</svg>
-			</div>
-			<div class="slide_buttons">
-			</div>
-			<div class="next_btn" title="Next">
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px"
-				     viewBox="0 0 477.175 477.175" xml:space="preserve"
-				     width="512px" height="512px">
-				<g>
-					<g>
-						<path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
-						      class="active-path" fill="#424241"/>
-					</g>
-				</g>
-			</svg>
-			</div>
-		</div>
-	</section>
     <?php
-
+    $images = array_map(function ($image) {
+        return "../img/excursions/{$image[0]}";
+    }, $images);
+    createSlideshow($images, "excursions");
+    $conn->close();
 }
 
 
@@ -138,15 +110,21 @@ function getDetails($id, mysqli $conn)
     while ($detail = $detailResult->fetch_assoc()) {
         $key = $detail['detail_key'];
         $value = $detail['detail_value'];
-        $icon = "../img/icons/placeholder";
-        switch ($key) {
-            case "Car distance":
-                $icon = "";
-        }
+        $icon_name = getIconForDetail($key);
+        $icon = "../img/icons/{$icon_name}";
         $details[$key] = [$value, $icon];
     }
 
     return $details;
+}
+
+// returns the icon name in the img/icons folder for a given detail name
+function getIconForDetail($detail)
+{
+    switch (trim(strtolower($detail))) {
+        default:
+            return "missing.svg";
+    }
 }
 
 function getImages($id, mysqli $conn)
