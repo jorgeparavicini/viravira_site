@@ -18,6 +18,10 @@ if (!empty($path) && $path !== "/") {
             build("excursions.php", true);
             break;
 
+        case '/excursion':
+            build("excursion.php", true);
+            break;
+
         case '/spa':
             build("spa.php", true);
             break;

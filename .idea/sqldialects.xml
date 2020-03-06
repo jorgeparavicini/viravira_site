@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/php/views/excursion_detail.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/php/views/excursion.php" dialect="MySQL" />
   </component>
   <component name="SqlResolveMappings">
     <file url="file://$PROJECT_DIR$/php/views/excursions.php" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;9b23e1d1-f418-4665-85d8-b0b2a31f7ad7&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;schema&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;viravira&quot;      }     }    }   }  } }}" />
