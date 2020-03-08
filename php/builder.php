@@ -17,7 +17,11 @@ function build($file, $hasSlideshow = false)
 	<div id="content">
         <?php
         echo "<!-- BODY -->";
-        include_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/{$file}";
+        if (file_exists("{$_SERVER['DOCUMENT_ROOT']}/php/views/{$file}")) {
+            include_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/{$file}";
+        } else {
+            include_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/404.php";
+        }
         ?>
 	</div>
 

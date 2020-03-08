@@ -1,49 +1,61 @@
 <?php
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/builder.php";
 $path = parse_url(trim($_SERVER['REQUEST_URI']), PHP_URL_PATH);
+$path = pathinfo($path, PATHINFO_FILENAME);
 
 if (!empty($path) && $path !== "/") {
 	$path = strtolower($path);
 
 	switch($path) {
-		case '/home':
+		case 'home':
 			build("home.php");
 			break;
 
-		case '/location':
+		case 'location':
 			build("location.php");
 			break;
 
-        case '/excursions':
+        case 'excursions':
             build("excursions.php", true);
             break;
 
-        case '/excursion':
+        case 'excursion':
             build("excursion.php", true);
             break;
 
-        case '/spa':
+        case 'spa':
             build("spa.php", true);
             break;
 
-        case '/gallery':
+        case 'gallery':
             build("gallery.php", true);
             break;
 
-        case '/contact':
+        case 'contact':
             build("contact.php");
             break;
-        case '/login':
+        case 'login':
             build("login.php");
             break;
 
-        case '/authenticate':
-            include_once "php/views/authenticate.php";
+        case 'edit':
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            if (authenticate()) {
+                build("excursion_editor.php");
+            }
+            /*if (isSessionActive()) {
+                build("excursion_editor.php");
+            } else {
+                $_GET['redirect'] = "edit";
+                build("login.php");
+            }*/
             break;
 
-        case '/edit':
-            build("excursion_editor.php");
-            break;
+        /*case 'authenticate':
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            authenticate($_POST['target'] ?? null);
+
+            break;*/
 
 		default:
 			build("404.php");
