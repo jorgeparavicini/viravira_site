@@ -34,6 +34,7 @@ if (!empty($path) && $path !== "/") {
         case 'contact':
             build("contact.php");
             break;
+            
         case 'login':
             build("login.php");
             break;
@@ -43,19 +44,7 @@ if (!empty($path) && $path !== "/") {
             if (authenticate()) {
                 build("excursion_editor.php");
             }
-            /*if (isSessionActive()) {
-                build("excursion_editor.php");
-            } else {
-                $_GET['redirect'] = "edit";
-                build("login.php");
-            }*/
             break;
-
-        /*case 'authenticate':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
-            authenticate($_POST['target'] ?? null);
-
-            break;*/
 
 		default:
 			build("404.php");
