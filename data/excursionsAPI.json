@@ -1,0 +1,989 @@
+{
+  "version": 2.2,
+  "list": [
+    {
+      "title": "Cerro Espejo",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "20 km",
+          "excursion-distance": "8 km / 2 km up",
+          "elevation-gain": "400 m (1100 m - 1500 m)",
+          "excursion-duration": "Full day - 5 hours",
+          "difficulty": "Medium/High",
+          "season": "November to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "On arrival at the park, we begin hiking through a native forest. As we climb, we reach the base of the Villarrica Volcano where we will observe volcanic footprints left by old eruptions. Continuing to the top of Cerro Espejo, we will enjoy amazing views of the volcanoes Villarrica, Quetrupillan and Lanin, as well as the Andes Mountain Range."
+          },
+          {
+            "header": "Prerequisites",
+            "text": "Good Physical Conditions"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Cerro_Espejo/Cerro_Espejo_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Los Lagos, Puesco",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "70 km",
+          "excursion-distance": "7 km / 3.5 km Up",
+          "elevation-gain": "200 m (1100 m - 1300 m)",
+          "excursion-duration": "Full day - 3.5 hours",
+          "difficulty": "Medium",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "On the Argentinian border, one-hour’s drive from our Hotel, we arrive at the Quillehue Lagoon where our walk takes us to the base of the Lanin Volcano. Passing beautiful Araucaria, Lenga and Coihue trees, we continue  until we reach the Hidden Lagoon, hopefully catching sight of some woodpeckers (known here as carpenter birds), and continuing into an Araucaria forest covered with lichen and emerging at the Huinfiuca Lagoon with its incredible views of the volcano."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Los_Lagos/Los_Lagos_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Laguna Verde",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "70 km",
+          "excursion-distance": "14 km",
+          "elevation-gain": "890 m (1100 m - 1990 m)",
+          "excursion-duration": "Full day - 6 hours",
+          "difficulty": "Medium / High",
+          "season": "November to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "This trek also begins at the Quillehue Lagoon on the Argentinian border. The walk takes 3.5 hours and consists of a trail through native trees that climbs up to 1900m reaching the base of the Lanin Volcano. Expect captivating views of this volcano as well as the Andes Mountains."
+          },
+          {
+            "header": "Prerquisites",
+            "text": "Good Physical Condition"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Laguna_Verde/Laguna_Verde_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Ascension Volcano",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "36 km",
+          "excursion-distance": "5 km",
+          "elevation-gain": "1450 m (1400 m - 2850 m)",
+          "excursion-duration": "Full day - 7 hours",
+          "difficulty": "High",
+          "season": "All year",
+          "price": "Extra cost"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Measuring an impressive 2,850 meters, the Villarrica Volcano (known as Rukapillan by the Mapuche) has the perfect cone shape with a mind-blowing open lava pool crater at the top. This makes climbing up this volcano one of the most original and remarkable activities. From the top we can see mountains, volcanoes and countless lakes: the elements that make the Araucania region view so incredible and unique. This tour is highly recommended for people looking for adventure and extreme sports."
+          },
+          {
+            "header": "Prerequisites",
+            "text": "Good Physical Condition"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Ascension_Volcano/Ascension_Volcano_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Andean Lakes Trail",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "70 km",
+          "exursion-distance": "3 km",
+          "elevation-gain": "50 m (1100 m -1150 m)",
+          "excursion-duration": "Full day - 4.5 hours",
+          "difficulty": "Low",
+          "season": "September to November",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "On the border of Argentina and Chile, there is a lagoon called Quillehue where we begin this walk with snow shoes. Winding our way between Araucaria, Lenga and Coihue trees, we will enjoy fascinating views of the Lanin Volcano. To finish the trip, we will stop to experience some local Mapuche gastronomy."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Andean_Lakes_Trail/Andean_Lakes_Trail_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Ñirrico",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "3 km",
+          "elevation-gain": "30 m (750 m - 780 m)",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low",
+          "season": "September to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "This trek is perfect for those looking for a beautiful, gentle walk through the forest. The trail takes us past a viewpoint overlooking Tinquilco Lake, and, at the end of the journey, we pass by some charming waterfalls before returning by the same path."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Nirrico/Nirrico_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Villarrica Traverse",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "36 km",
+          "excursion-distance": "2 km",
+          "elevation-gain": "50 m (1400 m - 1450 m)",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low",
+          "season": "November to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Heading towards the Villarrica Volcano, we start this trek near the ski center coffee area which sits at 1400 meters above sea level. At thi s point, we begin our walk around the base of the volcano. As well as postcard-perfect views of the region’s lakes, Villarrica and Calafquen, there is also a panorama of another volcano, Llaima. Walking at the base of Villarrica allows you to see volcanic scorias left by the eruptions, a rare sight to lay eyes on."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Villarrica_Traverse/Villarrica_Traverse_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Craters Parrasitos",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "30 km",
+          "excursion-distance": "7 km",
+          "elevation-gain": "255 m (1175 m - 1430 m)",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low / Medium",
+          "season": "October to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "At the base of the Villarrica Volcano, we begin our trek at 1,175 meters, passing volcanic scorias. Later the walk takes us through a dense native forest before reaching an observatory located at 1,400m where we can enjoy wonderful views of the surrounding lakes and volcanoes. Continuing the walk, we reach a lava formation where it is possible to find parasitic craters. A really fascinating excursion!"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Crateres_Parasitos/Crateres_Parasitos_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Quinchol",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "8 km",
+          "elevation-gain": "640 m (780 m - 1420 m)",
+          "excursion-duration": "Half day - 4 hours",
+          "difficulty": "Medium / High",
+          "season": "September to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Setting off from the hotel, we head straight to the Huerquehue National Park where we walk through a native forest, slowly ascending Quinchol. After 40 minutes trekking, we reach 1.000m and the charming Araucarias (this region's emblematic Monkey Puzzle trees) start to come into view more and more. At the end of this tour, we reach the pampas at the top of the hill, and are rewarded with amazing views of the volcanoes and lakes."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Quinchol/Quinchol_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Aguila & Truful Waterfall",
+      "type": "Trekking",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "4 km",
+          "elevation-gain": "270 m (730 m - 1.000 m)",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low / Medium",
+          "season": "September to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "On arrival at Huerquehue, this trek takes us along a trail surrounded by centenary trees. We climb the hill, enjoying incredible views of Lake Tinquilco and Villarrica Volcano, until we reach the first waterfall (Nido de Aguila or Eagle’s Nest) before continuing on to the second fall (Truful). Both these waterfalls are sourced from lakes that meet at the top of the hill. A fantastic experience!"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Aguila_Truful_Waterfall/Aguila_Truful_Waterfall_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Rio Plata",
+      "type": "Biking",
+      "description": {
+        "table": {
+          "car-distance": "5 km",
+          "excursion-distance": "16 km",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low / Medium",
+          "season": "March to December",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "This tour begins just 10 minutes from the hotel. We walk through a field full of animals, taking in the views of the Villarrica Volcano, and at some points skirting along the Liucura River. Later, we reach the observatory located at Quelhue Bridge, where we can see Trancura River and the volcanoes Quetrupillan and Lanin. To complete the trip, we make for the Ríio Plata Beach for a rest admiring the beautiful spectacle of the volcano before returning to the hacienda."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Rio_Plata/Rio_Plata_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "El Cerduo",
+      "type": "Biking",
+      "description": {
+        "table": {
+          "car-distance": "20 km",
+          "excursion-distance": "12 km",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low / Medium",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Nestled between hills and rivers, we cross a field surrounded by young forest until we reach a high point with panoramic views of the Andes Mountain Range (known as the Cordillera). It is hard to take your eyes off the views of the Villarrica Volcano from this spot."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/El_Cerduo/El_Cerduo_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Saltos de Mariman",
+      "type": "Biking",
+      "description": {
+        "table": {
+          "car-distance": "0 km",
+          "excursion-distance": "6 km",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "We leave the hotel by bike and ride along an inner trail with gorgeous views of the Villarrica Volcano - the region‘s main attraction - until we reach an eco-park. From here, we walk to an observatory where the impressive Trancura River Waterfalls are waiting to be admired."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Saltos_de_Mariman/Saltos_de_Mariman_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Tinquilco Lake Kayaking",
+      "type": "Kayak",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "2 hours",
+          "excursion-duration": "Full day - 4 hours",
+          "difficulty": "Low",
+          "season": "November to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Arriving at Lake Tinquilco, in the Huerquehue National Park, we start this activity paddling in our kayaks for around 1 hour. Surrounded by mountains and the beautiful native forest, when we reach the opposite shore we begin to walk along a trail which takes us to charming waterfalls. Returning by kayak, we conclude the tour with a delicious picnic lunch. This excursion is the perfect option for people looking to connect with nature."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Tinquilco_Lake_Kayaking/Tinquilco_Lake_Kayaking_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Liucura River Floating",
+      "type": "Floating",
+      "description": {
+        "table": {
+          "car-distance": "0 km",
+          "excursion-distance": "5 km",
+          "excursion-duration": "Half day - 1 hour",
+          "difficulty": "Low",
+          "season": "Low",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Floating along the clear waters of the Liucura River, we set off from the hotel’s private beach in a rafting boat – the perfect way to observe the beautiful surrounding mountains, as well as the native forest and aquatic birds. This is ideal for relaxation and contemplating nature. We end this peaceful tour with a delicious picnic at the arrival point enjoying the calming sounds of the water."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Liucura_River_Floating/Liucura_River_Floating_1.jpg"
+        },
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Liucura_River_Floating/Liucura_River_Floating_2.jpg"
+        },
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Liucura_River_Floating/Liucura_River_Floating_3.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Liucura River Fishing",
+      "type": "Fishing",
+      "description": {
+        "table": {
+          "car-distance": "0 km",
+          "excursion-distance": "5 km",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low",
+          "season": "November to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "With our expert local guides, we start this tour at the hotel’s private beach, heading straight to the river’s best spots for fishing. Liucura, which in Mapudungun (the Mapuche language) means white rock, is a river with clear waters, nice structure and smooth currents. During the fishing season it is possible to find rainbow trout, brown trout and salmon – all this, with the backdrop of the marvelous Villarrica Volcano."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Liucura_River_Fishing/Liucura_River_Fishing_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Stand Up Paddle",
+      "type": "Adventure",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "1 km",
+          "elevation-gain": "500 m (600 m - 1100 m)",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Medium",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Enjoy a fun day out to play in the pristine waters around Vira Vira. Starting at the Hotel you can paddle down Liucura River. Or we take you to lake Tinquilco, where this foto was taken."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Stand_up_Paddle/Stand_up_Paddle_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Via Ferrata",
+      "type": "Adventure",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "7 km",
+          "elevation-gain": "400 m (600 m - 1000 m)",
+          "excursion-duration": "Full day - 6 hours",
+          "difficulty": "Medium",
+          "season": "June to October",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "In this climbing park in the magical Cerduo Valley you access the rock via secure metal steps. The climb is approximately 300 meter long. Secured with harness and fixed lines, this activity allows you to safely get rock contact and enjoy a little bit of Adrenalin."
+          },
+          {
+            "header": "Prerequisites",
+            "text": "For active people"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Via_Ferrata/Via_Ferrata_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Trancura River Rafting",
+      "type": "Adventure",
+      "description": {
+        "table": {
+          "car-distance": "7 km",
+          "excursion-distance": "8 km",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low",
+          "season": "November to May",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Just 15 minutes from our hotel is where we start this river descent. Before setting off we will have a security briefing and test the equipment. Trancura is the most abundant of the region’s rivers, and is surrounded by native forest. This is a very enjoyable, risk-controlled activity."
+          },
+          {
+            "header": "Prerequisites",
+            "text": "For active people who enjoy the water."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Trancura_River_Rafting/Trancura_River_Rafting_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Canyoning",
+      "type": "Adventure",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "7 km",
+          "elevation-gain": "500 m (600 m - 1100 m)",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Medium",
+          "season": "June to October",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Get yourselves excited to discover Pucon‘s green paradise from within. We drive you close to the well hidden entrance of canyon with 3 waterfalls. At the first one you will be briefed on safety and get familiar with the equipment. The tour is off route and combines trekking, abseiling and zipline. In the canyon an amazing flora and fauna is waiting for you and of course some fun challenges canyoning down, passing waterfalls, caves or toboggan runs."
+          },
+          {
+            "header": "Prerequisites",
+            "text": "For active people who."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Canyoning/Canyoning_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mapuche Culture",
+      "type": "Culture",
+      "description": {
+        "table": {
+          "car-distance": "70 km",
+          "excursion-duration": "Full day - 4.5 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "We leave the hotel heading to Curarrehue, a small town nestled between the mountains. Here we visit a Mapuche lady, watching her as she works with the loom, and learning a little about her skills and practice. After that, we continue our journey up the Andes until we arrive at Quillelhue Lagoon, located at the foot of Lanin Volcano. Here you will have the opportunity of seeing the majestic Araucaria trees (known as Monkey Puzzle trees). To finish the trip, we have lunch at a traditional Mapuche Ruka."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Mapuche_Culture/Mapuche_Culture_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mapuches",
+      "type": "Culture",
+      "description": {
+        "table": {
+          "car-distance": "35 km",
+          "excursion-duration": "Full day - 4.5 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "If you are interested to learn about one of Chile’s indigenous cultures, this tour is perfect for you. The journey will take you to Curarrehue where you will visit a Mapuche lady and watch her working the loom. Later, we visit some beautiful waterfalls close to Palguin. To end the trip, we have lunch at a Ruka, which means house in the Mapuche language and is one of the most important constructions in Mapuche architecture."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Mapuches/Mapuches_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Pucon City Tour",
+      "type": "Scenic Drives",
+      "description": {
+        "table": {
+          "car-distance": "16 km",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "This excursion takes in the scenic town of Pucon, a mountain community with booming tourism (especially among Chileans). This small town has architectural influences that stem from German, Swiss and Italian immigrants who arrived at the beginning of the XX century. Walking along the edge of Lake Villarrica, we will enjoy charming views of the namesake volcano. During this visit there will be opportunities to visit markets and shops stocked with artisan products. You will be enchanted by this little town."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Pucon_City_Tour/Pucon_City_Tour_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Palguin Waterfalls",
+      "type": "Scenic Drives",
+      "description": {
+        "table": {
+          "car-distance": "30 km",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "We leave the hotel and head to Palguin, a 30 minute drive by car. Here there are small trails surrounded by native forest leading to a series of charming waterfalls. These gorgeous cascades stem from rivers that sprout at the foot of the Quetrupillan Volcano. A trip to enjoy the noble gifts of nature."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Palguin_Waterfalls/Palguin_Waterfalls_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Caren Waterfalls",
+      "type": "Scenic Drives",
+      "description": {
+        "table": {
+          "car-distance": "40 km",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "In order to visit the charming cascades that spring from the Andes Mountains, we drive to Caren, close to the village of Curarrehue. We walk along small paths through native forest until we reach beautiful waterfalls, allowing us to appreciate the immense beauty of Earth."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Caren_Waterfalls/Caren_Waterfalls_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Salto el Claro",
+      "type": "Scenic Drives",
+      "description": {
+        "table": {
+          "car-distance": "10 km",
+          "excursion-duration": "Half day - 2 hours",
+          "difficulty": "Low / Medium",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Close to the city of Pucon, there is a very beautiful waterfall called Salto El Claro. This cascade reaches 70m high and to catch the best view, we make our way down a steep path, twisting between trees and over roots – a walk you have to be sure-footed to take on, but it’s well worth it. Salto El Claro is surrounded by the greenest native forest."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Salto_el_Claro/Salto_el_Claro_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Panqui 1",
+      "type": "Horseback Riding",
+      "description": {
+        "table": {
+          "car-distance": "50 km",
+          "excursion-duration": "Full day - 4 hours",
+          "difficulty": "Low / Medium",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "This ride also starts at San Pedro where the horses will be tacked up and ready for us to ride out into in the middle of the countryside passing along beautiful trails and taking in the views of the amazing volcanoes Quetrupillan, Villarrica and Lanin. This is an unforgettable full-day horseback ride taking in mountains, forests and volcanoes - definitely something you don't do every day."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Panqui/Panqui_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Huepil Malal",
+      "type": "Horseback Riding",
+      "description": {
+        "table": {
+          "car-distance": "40 km",
+          "excursion-duration": "Half day - 4 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Huepil Malal is a riding center bordering Cani Natural Reserve. After a challenging 4 wheel drive up a gravel road you arrive at Rodolfo Coombs rural paradise. His horses are gems of national breeds with typical names like Merken, Calafate or Canela. Rodolfo will take you on a scenic tour of his vast property full of open prairies and native forests. Join in for thiis authentic riding experience and meet a proud Chilean Huaso."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Huepil_Malal/Huepil_Malal_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Volcano Sightseeing",
+      "type": "Helicopter Flights",
+      "description": {
+        "table": {
+          "excursion-duration": "45 min.",
+          "difficulty": "Low",
+          "season": "December to March",
+          "price": "Available at an additional cost"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Setting off from the hotel in style aboard our helicopter, we soar across the Lake District passing over the active crater of the Villarrica Volcano. As if this were not already enough, the view also encompasses other volcanoes, lakes and valleys – a truly unique experience!"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Volcano_Sightseeing/Volcano_Sightseeing_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Thermal Springs Geometricas",
+      "type": "Helicopter Flights",
+      "description": {
+        "table": {
+          "excursion-duration": "90 min.",
+          "difficulty": "Low",
+          "season": "December to March",
+          "price": "Available at an additional cost"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Boarding our helicopter, we head to one of the region's most beautiful thermal springs, known as Geometricas. You will be able to bathe in the naturally warm waters, surrounded by a beautiful native forest. Both the outward and return journeys afford amazing views of the volcanoes and lakes – a flight to relax and admire the outstanding nature."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Thermal_Springs_Geometricas/Thermal_Springs_Geometricas_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Heli Biking",
+      "type": "Helicopter Flights",
+      "description": {
+        "table": {
+          "excursion-duration": "90 min.",
+          "difficulty": "Low",
+          "season": "December to March",
+          "price": "Available at an additional cost"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Plan this trip together with our helicopter pilot and leave the hotel at your preferred hour. In a 20 minutes flight you reach the destination on Villarrica Volcano. The downhill of about an hour follows a cross country track over lava fields and along the border of Turbio River. After the ride the transfer will be ready to bring you back to the hotel."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Heli_Biking/Heli_Biking_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Heli Fishing",
+      "type": "Helicopter Flights",
+      "description": {
+        "table": {
+          "excursion-duration": "90 min.",
+          "difficulty": "Low",
+          "season": "December to March",
+          "price": "Available at an additional cost"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "We take flight in our helicopter heading towards the Quetrupillan Volcano, landing at its foot alongside Laguna Azul (Blue lagoon), the perfect place for fly fishing. Our experienced fishing guides can lead this excursion if required. As well as world-class fishing, you will enjoy charming views during the flight, spanning the region's volcanoes and lakes."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Heli_Fishing/Heli_Fishing_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Villarrica Volcano Shelter",
+      "type": "Winter Activities",
+      "description": {
+        "table": {
+          "car-distance": "30 km",
+          "excursion-distance": "2 km",
+          "elevation-gain": "130 m (1200 m - 1330 m)",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low / Medium",
+          "season": "June to October",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Departing from our hotel, we head to the volcanic caves surrounding Villarrica Volcano, a place with beautiful views of Lake Villarrica. At the base of the volcano, the scenery encompasses Llaima, another incredible volcano. Look out for a scattering of Araucaria trees on this side of the Villarrica Volcano."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Villarrica_Volcano_Shelter/Villarrica_Volcano_Shelter_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Winter Walks by the Lake",
+      "type": "Winter Activities",
+      "description": {
+        "table": {
+          "car-distance": "70 km",
+          "excursion-distance": "3 km",
+          "elevation-gain": "50 m (1100 m - 1150 m)",
+          "excursion-duration": "Full day - 4.5 hours",
+          "difficulty": "Low",
+          "season": "September to November",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "On the border of Argentina and Chile, there is a lagoon called Quillehue where we begin this walk with snow shoes. Winding our way between Araucaria, Lenga and Coihue trees, we will enjoy fascinating views of the Lanin Volcano. To finish the trip, we will stop to experience some local Mapuche gastronomy."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Winter_Walks_by_the_Lake/Winter_Walks_by_the_Lake_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Mystic Araucaria Forest",
+      "type": "Winter Activities",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "excursion-distance": "7 km",
+          "elevation-gain": "500 m (600 m - 1100 m)",
+          "excursion-duration": "Full day - 6 hours",
+          "difficulty": "Medium",
+          "season": "June to October",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "We will take you to a beautiful park, full of Araucaria trees. This time we are going to explore the lakes, but not just that - the trail also has beautiful waterfalls and wonderful views of San Sebastian, the highest point of the park. This park is amazing, and each step allows us to experience another incredible element of its diverse nature."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Mystic_Araucaria_Forest/Mystic_Araucaria_Forest_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Snowmobile",
+      "type": "Winter Activities",
+      "description": {
+        "table": {
+          "car-distance": "18 km",
+          "elevation-gain": "500 m (600 m - 1100 m)",
+          "excursion-duration": "Full day - 6 hours",
+          "difficulty": "Medium",
+          "season": "September to November",
+          "price": "Available at an extra cost"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "Skiing on an active volcano is spectacular. On a snowmobile it becomes a once in a lifetime experience. Together with your driver you circle the whole volcano finding a virgin track on every run. This activity is designed for active sportsfriends. As the mobiles function similar to a motorbike you will have to hang on and lean in according to your drivers instructions. A breathtaking and fun adventure."
+          },
+          {
+            "header": "Prerequisites",
+            "text": "For active people"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Snowmobile/Snowmobile_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Panqui 2",
+      "type": "Horseback Riding",
+      "description": {
+        "table": {
+          "car-distance": "50 km",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low",
+          "season": "All year",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "We drive from our hotel to Pichi Curarrehue, and then on to San Pedro, where we start our ride on Chilean horses, a special breed suitable for this countryside full of mountains and native forest. During this horseback ride, you will enjoy the most incredible views of the volcanoes Quetrupillan, Villarrica and Lanin."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Panqui_2/Panqui_1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Lengas Forest",
+      "type": "Winter Activities",
+      "description": {
+        "table": {
+          "car-distance": "36 km",
+          "excursion-distance": "3 km",
+          "elevation-gain": "50 m (1100 - 1150 m)",
+          "excursion-duration": "Half day - 3 hours",
+          "difficulty": "Low / Medium",
+          "season": "June to October",
+          "price": "All Inclusive"
+        },
+        "detail": [
+          {
+            "header": "Description",
+            "text": "One arrival at the base of Volcano Villarrica, we begin our walk through a charming forest full of Lenga trees covered with lichen. Through this forest has some ups and downs, and as we reach the higher part we are rewarded with impressive views of the must-see volcano."
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "http://hotelviravira.com/app/Images/Optimised/Lengas_Forest/Lengas_Forest_1.jpg"
+        }
+      ]
+    }
+  ]
+}

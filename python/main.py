@@ -9,7 +9,7 @@ viravira_db = mysql.connector.connect(
     auth_plugin="mysql_native_password"
 )
 
-with open(r"C:\Users\paravicinij\Downloads\GPXFiles\excursionsAPI.json") as file:
+with open(r"../data/excursionsAPI.json") as file:
     data = json.load(file)
 
     for excursion in data['list']:
