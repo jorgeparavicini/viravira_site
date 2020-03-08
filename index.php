@@ -34,10 +34,6 @@ if (!empty($path) && $path !== "/") {
         case 'contact':
             build("contact.php");
             break;
-            
-        case 'login':
-            build("login.php");
-            break;
 
         case 'edit':
             require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";

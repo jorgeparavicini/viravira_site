@@ -1,10 +1,4 @@
-<header class="header">
-    <!-- Hamburger Buns and Patties -->
-    <div id="hamburgerButton">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<header>
 
     <nav id="menuNav">
         <ul id="menu">
@@ -28,10 +22,20 @@
             </li>
         </ul>
     </nav>
-    <p class="headerTitle">Vira Vira</p>
-    <a href="/home" class="navigationLogo">
-        <img src="/img/icons/LOGO.svg" alt="Hotel Vira Vira logo"/>
-    </a>
+
+    <div class="headerContent">
+        <!-- Hamburger Buns and Patties -->
+
+        <p id="headerTitle">Vira Vira</p>
+        <a href="/home" class="headerLogo">
+            <img src="/img/icons/LOGO.svg" alt="Hotel Vira Vira logo"/>
+        </a>
+        <div id="hamburgerButton">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 </header>
 
 <script src="/js/header.js"></script>
