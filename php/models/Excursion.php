@@ -65,7 +65,7 @@ class Excursion
     	$sql = "SELECT * FROM excursion WHERE excursion_id = {$id}";
     	$conn = self::createSession();
     	$result = $conn->query($sql);
-    	if ($result->num_rows != 1) {
+    	if ($result == null || $result->num_rows != 1) {
     		throw new Exception("Did not find excursion");
 	    }
 		$row = $result->fetch_assoc();
@@ -205,7 +205,7 @@ class Excursion
             $key = $detail['detail_key'];
             $value = $detail['detail_value'];
             $icon = self::getIconForDetail($key);
-            $details[$key] = [$value, $icon];
+            $details[$key] = ["value" => $value, "icon" => $icon];
         }
 
         $this->details = $details;
@@ -227,7 +227,7 @@ class Excursion
         $imageResult = $conn->query($sql);
         $images = [];
         while ($image = $imageResult->fetch_assoc()) {
-            array_push($images, [$image['image_url'], $image['description']]);
+            array_push($images, ["url" => $image['image_url'], "description" => $image['description']]);
         }
 
         $this->images = $images;

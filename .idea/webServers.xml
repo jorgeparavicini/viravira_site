@@ -13,6 +13,9 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="d5fed491-dc94-43c0-8f71-9601a639cb9d" name="ViraVira Work" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
+      </webServer>
     </option>
   </component>
 </project>

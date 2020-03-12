@@ -78,7 +78,7 @@ function isLoggedIn() {
 function isSessionActive()
 {
     // The number of seconds the user can be logged in.
-    $timeout = 20;
+    $timeout = 3600;
     if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false) return false;
     if (!isset($_SESSION['loginTime'])) return false;
 

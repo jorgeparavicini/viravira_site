@@ -35,10 +35,34 @@ if (!empty($path) && $path !== "/") {
             build("contact.php");
             break;
 
+            // Overview of all excursions that can be edited
         case 'edit':
             require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
             if (authenticate()) {
                 build("excursion_editor.php");
+            }
+            break;
+
+            // Modify or create a new excursion
+        case 'modify':
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            if (authenticate()) {
+                build("modify_excursion.php");
+            }
+            break;
+
+            // Update the database
+        case 'update':
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            if (authenticate()) {
+                build("excursion_updater.php");
+            }
+            break;
+
+        case 'delete':
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            if (authenticate()) {
+                build("delete_excursion.php");
             }
             break;
 
