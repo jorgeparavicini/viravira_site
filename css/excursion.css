@@ -48,7 +48,7 @@
 }
 
 .detail svg, .detail img {
-	fill: var(--primary-font-color);
+	filter: invert(22%) sepia(4%) saturate(268%) hue-rotate(22deg) brightness(96%) contrast(85%);
 	width: 50px;
 	margin: 0 auto;
 }

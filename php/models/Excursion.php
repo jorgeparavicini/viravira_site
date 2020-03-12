@@ -170,7 +170,19 @@ class Excursion
     }
 
     private function getIconForDetail($detailKey) {
-        switch ($detailKey) {
+        switch (strtolower($detailKey)) {
+	        case "car distance":
+	        	return "/img/icons/car_distance.svg";
+	        case "difficulty":
+	        	return "/img/icons/level.svg";
+	        case "excursion distance":
+	        	return "/img/icons/travel_distance.svg";
+	        case "excursion duration":
+	        	return "/img/icons/clock.svg";
+	        case "price":
+	        	return "/img/icons/price.svg";
+	        case "season":
+	        	return "/img/icons/sun.svg";
             default:
                 return "/img/icons/missing.svg";
         }
