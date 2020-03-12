@@ -9,10 +9,7 @@
 }
 
 .formGrid {
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	display: flex;
 }
 
 #query {
@@ -20,17 +17,13 @@
 }
 
 .firstColumn {
-	grid-row-start: 1;
-	grid-row-end: 3;
-	grid-column-start: 1;
-	grid-column-end: 2;
+	flex-grow: 1;
+	flex-basis: 25%;
 }
 
 .secondColumn {
-	grid-row-start: 1;
-	grid-row-end: 3;
-	grid-column-start: 2;
-	grid-column-end: 3;
+	flex-grow: 1;
+	flex-basis: 25%;
 }
 
 form {
@@ -98,4 +91,9 @@ button, input[type="submit"]:hover {
 
 input[type="submit"] {
 	font-size: 1.1em;
+}
+
+label.error {
+	color: #CC0000;
+	font-size: 0.7em;
 }

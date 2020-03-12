@@ -11,24 +11,12 @@ class Excursion
     private $descriptions;
     private $details;
 
-    private static $servername = "localhost";
-    private static $username = "root";
-    private static $password = "1234";
-    private static $db = "viravira";
 
-    public static function createSession()
-    {
-        $conn = new mysqli(self::$servername, self::$username, self::$password, self::$db);
-        if ($conn->connect_error) {
-            die("Connection failed: {$conn->connect_error}");
-        }
-        return $conn;
-    }
 
     public static function loadAll(): array
     {
         $sql = "SELECT * FROM excursion";
-        $conn = self::createSession();
+        $conn = SQLManager::createSession();
         $result = $conn->query($sql);
 
         $excursions = [];
@@ -63,7 +51,7 @@ class Excursion
      */
     public static function loadFromId($id) {
     	$sql = "SELECT * FROM excursion WHERE excursion_id = {$id}";
-    	$conn = self::createSession();
+    	$conn = SQLManager::createSession();
     	$result = $conn->query($sql);
     	if ($result == null || $result->num_rows != 1) {
     		throw new Exception("Did not find excursion");
@@ -163,7 +151,7 @@ class Excursion
             throw new Exception("Excursion has no id");
         }
     	$sql = "SELECT header, description FROM excursion_description WHERE excursion_id = {$this->id}";
-    	$conn = self::createSession();
+    	$conn = SQLManager::createSession();
     	$descriptionResult = $conn->query($sql);
     	$descriptions = [];
 
@@ -197,7 +185,7 @@ class Excursion
 	    }
 
         $sql = "SELECT detail_key, detail_value FROM excursion_detail WHERE excursion_id = {$this->id}";
-    	$conn = self::createSession();
+    	$conn = SQLManager::createSession();
         $detailResult = $conn->query($sql);
         $details = [];
 
@@ -223,7 +211,7 @@ class Excursion
         }
 
         $sql = "SELECT image_url, description FROM excursion_image WHERE excursion_id = {$this->id}";
-        $conn = self::createSession();
+        $conn = SQLManager::createSession();
         $imageResult = $conn->query($sql);
         $images = [];
         while ($image = $imageResult->fetch_assoc()) {

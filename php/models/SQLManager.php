@@ -3,6 +3,21 @@
 
 class SQLManager
 {
+
+    private static $servername = "localhost";
+    private static $username = "root";
+    private static $password = "1234";
+    private static $db = "viravira";
+
+    public static function createSession()
+    {
+        $conn = new mysqli(self::$servername, self::$username, self::$password, self::$db);
+        if ($conn->connect_error) {
+            die("Connection failed: {$conn->connect_error}");
+        }
+        return $conn;
+    }
+
 //region SQL Statements
 
     /**
@@ -186,6 +201,26 @@ class SQLManager
         $sql = "DELETE FROM excursion WHERE excursion_id = ?";
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("i", $id);
+            return $stmt->execute();
+        } else {
+            die("Invalid SQL Syntax");
+        }
+    }
+
+    /**
+     * @param $conn mysqli The Mysqli Connection
+     * @param $name string The name of the guest asking the question
+     * @param $surname string The last name of the guest asking the question
+     * @param $email string The email of the guest asking the question
+     * @param $phone string The phone number of the guest asking the question
+     * @param $subject string The subject of the query
+     * @param $query string The asked question
+     * @return bool True if the insertion succeeded.
+     */
+    public static function writeQuery($conn, $name, $surname, $email, $phone, $subject, $query) {
+        $sql = "INSERT INTO query (first_name, last_name, email, phone, subject, query) VALUES (?, ?, ?, ?, ?, ?)";
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("ssssss", $name, $surname, $email, $phone, $subject, $query);
             return $stmt->execute();
         } else {
             die("Invalid SQL Syntax");
