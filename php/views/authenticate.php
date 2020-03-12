@@ -42,7 +42,7 @@ function authenticate()
  */
 function login($username, $password)
 {
-    $conn = Excursion::createSession();
+    $conn = SQLManager::createSession();
     $sql = "SELECT account_id, password FROM account WHERE username = '{$username}'";
     $result = $conn->query($sql);
 
@@ -51,7 +51,6 @@ function login($username, $password)
         $storedPassword = $fetched['password'];
 
         if (password_verify($password, $storedPassword)) {
-            //session_regenerate_id();
             $_SESSION['loggedIn'] = true;
             $_SESSION['name'] = $username;
             $_SESSION['id'] = $fetched['account_id'];

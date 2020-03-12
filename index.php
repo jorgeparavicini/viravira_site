@@ -59,6 +59,9 @@ if (!empty($path) && $path !== "/") {
             break;
 
         case 'contact_form':
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
             build("contact_form.php");
             break;
 

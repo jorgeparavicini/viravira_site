@@ -34,21 +34,25 @@ if (!$query) {
 }
 
 // Write to database
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 
 if (isset($_SESSION['querySubmitted']) && $_SESSION['querySubmitted']) {
     displayError("Query already submitted, please wait before submitting your next query.");
     return;
 }
 
-if (SQLManager::writeQuery($firstName, $lastName, $email, $phone, $subject, $query)) {
+$conn = SQLManager::createSession();
+$conn->begin_transaction();
+if (SQLManager::writeQuery($conn, $firstName, $lastName, $email, $phone, $subject, $query)) {
     ?>
     <h1>Successfully submitted your query.</h1>
     <?php
     $_SESSION['querySubmitted'] = true;
+    $conn->commit();
+} else {
+    $conn->rollback();
 }
+
+$conn->close();
 
 
 function displayError($message)
@@ -67,7 +71,7 @@ function getValidatedFirstName()
         return false;
     }
     $name = $_POST['firstName'];
-    if (preg_match("/^[\w'\-,.][0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$/", $name, $match)) {
+    if (preg_match("/^([a-zA-Z' ]+)$/", $name, $match)) {
         return $name;
     }
     return false;
@@ -79,7 +83,7 @@ function getValidatedLastName()
         return false;
     }
     $name = $_POST['firstName'];
-    if (preg_match("^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$", $name, $match)) {
+    if (preg_match("/^([a-zA-Z' ]+)$/", $name, $match)) {
         return $name;
     }
     return false;
@@ -103,10 +107,9 @@ function getValidatedPhone()
         return null;
     }
     $phone = $_POST['phone'];
-    if (preg_match("(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})", $phone, $match)) {
-        return $phone;
-    }
-    return null;
+    $phone = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
+    $phone = str_replace("-", "", $phone);
+    return 10 <= strlen($phone) && strlen($phone) <= 14 ? $phone : null;
 }
 
 function getValidatedSubject()

@@ -16,14 +16,15 @@
 	margin-top: 10px;
 }
 
-.firstColumn {
+.column {
 	flex-grow: 1;
 	flex-basis: 25%;
 }
 
-.secondColumn {
-	flex-grow: 1;
-	flex-basis: 25%;
+.left-align {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
 }
 
 form {
@@ -67,6 +68,16 @@ input[type=text], textarea, input[type=email], input[type=tel] {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
+}
+
+textarea::placeholder {
+	font-family: museo-sans, sans-serif;
+	font-size: 0.8em;
+}
+
+textarea {
+	font-family: museo-sans, sans-serif;
+	font-size: 1em;
 }
 
 label {

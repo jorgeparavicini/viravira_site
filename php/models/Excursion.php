@@ -1,5 +1,5 @@
 <?php
-
+require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/SQLManager.php";
 class Excursion
 {
     private $title;

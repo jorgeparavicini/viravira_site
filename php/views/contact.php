@@ -1,29 +1,29 @@
 <h1>Contact</h1>
 <div id="contactGrid">
-	<div class="firstColumn">
+	<div class="column">
 		<h2>Vira Vira</h2>
 		<h3>Hacienda Hotel</h3>
 		<p class="infoRow">Parcela 22a Quetroleufu, Pucón, Chile</p>
 		<p class="infoRow">+56 45 237 4000</p>
 		<p class="infoRow">info@hotelviravira.com</p>
 	</div>
-	<form class="secondColumn" action="contact_form" method="post" name="contact">
+	<form class="column" action="contact_form" method="post" name="contact">
 		<div class="formGrid">
-			<div class="firstColumn">
+			<div class="column left-align">
 				<label for="firstName"></label>
 				<input id="firstName" name="firstName" type="text" placeholder="First Name">
 			</div>
-			<div class="secondColumn">
+			<div class="column left-align">
 				<label for="lastName"></label>
 				<input id="lastName" name="lastName" type="text" placeholder="Last Name">
 			</div>
 		</div>
 		<div class="formGrid">
-			<div class="firstColumn">
+			<div class="column left-align">
 				<label for="email"></label>
 				<input id="email" class="firstColumn" name="email" type="text" placeholder="Email">
 			</div>
-			<div class="secondColumn">
+			<div class="column left-align">
 				<label for="phone"></label>
 				<input id="phone" class="secondColumn" name="phone" type="text" placeholder="Phone Number">
 			</div>

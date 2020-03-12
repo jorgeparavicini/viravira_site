@@ -1,0 +1,10 @@
+#content a {
+	text-decoration: none;
+	color: var(--primary-font-color);
+	border: none;
+	background-color: #E6E6E6;
+	padding: 15px 32px;
+	text-align: center;
+	font-size: 1.5em;
+	margin: 30px auto;
+}
