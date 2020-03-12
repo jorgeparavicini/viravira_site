@@ -11,49 +11,27 @@ if (!isset($_GET['id'])) {
 $conn = Excursion::createSession();
 $conn->begin_transaction();
 
-$sql = "DELETE FROM excursion_description WHERE excursion_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $_GET['id']);
-$result = $stmt->execute();
-$stmt->close();
+$id = $_GET['id'];
 
-if (!$result) {
+if (!SQLManager::clearExcursionDescriptions($conn, $id)) {
     displayFailure("Failed to remove descriptions");
     $conn->rollback();
     return;
 }
 
-$sql = "DELETE FROM excursion_detail WHERE excursion_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $_GET['id']);
-$result = $stmt->execute();
-$stmt->close();
-
-if (!$result) {
+if (!SQLManager::clearExcursionDetails($conn, $id)) {
     displayFailure("Failed to remove details");
     $conn->rollback();
     return;
 }
 
-$sql = "DELETE FROM excursion_image WHERE excursion_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $_GET['id']);
-$result = $stmt->execute();
-$stmt->close();
-
-if (!$result) {
+if (!SQLManager::clearExcursionImages($conn, $id)) {
     displayFailure("Failed to remove images");
     $conn->rollback();
     return;
 }
 
-$sql = "DELETE FROM excursion WHERE excursion_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $_GET['id']);
-$result = $stmt->execute();
-$stmt->close();
-
-if (!$result) {
+if (!SQLManager::removeExcursion($conn, $id)) {
     displayFailure("Failed to remove excursion");
     $conn->rollback();
     return;

@@ -177,5 +177,20 @@ class SQLManager
         }
     }
 
+    /**
+     * @param $conn mysqli The Mysqli Connection
+     * @param $id string The id of the excursion which should be removed
+     * @return bool True if the deletion succeeded
+     */
+    public static function removeExcursion($conn, $id) {
+        $sql = "DELETE FROM excursion WHERE excursion_id = ?";
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("i", $id);
+            return $stmt->execute();
+        } else {
+            die("Invalid SQL Syntax");
+        }
+    }
+
 //endregion
 }
