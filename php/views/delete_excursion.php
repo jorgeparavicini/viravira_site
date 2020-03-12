@@ -39,7 +39,7 @@ if (!SQLManager::removeExcursion($conn, $id)) {
 
 $conn->commit();
 
-displaySuccess("Successfully deleted excursion: {$_GET['id']}");
+displaySuccess("Successfully deleted excursion: {$id}");
 
 
 function displayFailure($message) {
