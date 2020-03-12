@@ -46,13 +46,16 @@
 	margin-bottom: 10px;
 }
 
-.control a {
+.control a, .control button {
 	text-decoration: none;
 	color: var(--primary-font-color);
 	border: none;
 	background-color: #E6E6E6;
 	padding: 15px 32px;
 	text-align: center;
+	margin: 0;
+	font-size: 1em;
+	font-family: museo-sans, sans-serif
 }
 
 .create {
@@ -64,4 +67,57 @@
 	text-align: center;
 	font-size: 1.5em;
 	margin: 30px auto;
+}
+
+.error {
+	color: #C00;
+	margin: 0 auto 30px;
+}
+
+form {
+	width: 80%;
+	margin: auto;
+}
+
+input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+label {
+	width: 100%;
+	text-align: left;
+}
+
+button, input[type="submit"] {
+	text-decoration: none;
+	color: var(--primary-font-color);
+	border: none;
+	background-color: #E6E6E6;
+	padding: 8px 32px;
+	text-align: center;
+
+	margin: 10px auto;
+}
+
+button, input[type="submit"]:hover {
+	cursor: pointer;
+}
+
+input[type="submit"] {
+	font-size: 1.1em;
+}
+
+.panels {
+	display: flex;
+	justify-content: space-between;
+}
+
+.panel {
+	width: 49%;
 }

@@ -59,7 +59,9 @@ if (!$result) {
     return;
 }
 
-$conn->commit();
+// TODO: Change back
+//$conn->commit();
+$conn->rollback();
 
 displaySuccess("Successfully deleted excursion: {$_GET['id']}");
 

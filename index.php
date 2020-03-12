@@ -43,14 +43,6 @@ if (!empty($path) && $path !== "/") {
             }
             break;
 
-            // Modify or create a new excursion
-        case 'modify':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
-            if (authenticate()) {
-                build("modify_excursion.php");
-            }
-            break;
-
             // Update the database
         case 'update':
             require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";

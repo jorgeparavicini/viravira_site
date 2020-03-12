@@ -29,12 +29,12 @@ foreach ($excursion->getDescriptions() as $header => $description) {
 <h2>Details</h2>
 <div class="details">
     <?php
-    foreach ($excursion->getDetails() as $key => $value) {
+    foreach ($excursion->getDetails() as $key => $detail) {
         ?>
 		<div class="detail">
-			<img src="<?php echo $value[1] ?>" alt="detail icon">
+			<img src="<?php echo $detail["icon"] ?>" alt="detail icon">
 			<h3 class="detail_title"><?php echo $key ?></h3>
-			<p class="detail_value"><?php echo $value[0] ?></p>
+			<p class="detail_value"><?php echo $detail["value"] ?></p>
 		</div>
         <?php
     }
@@ -47,7 +47,7 @@ if (count($images) > 0) {
 	<h2>Gallery</h2>
     <?php
     $images = array_map(function ($image) {
-        return "/img/excursions/{$image[0]}";
+        return "/img/excursions/{$image["url"]}";
     }, $images);
     createSlideshow($images, "excursions");
 }
