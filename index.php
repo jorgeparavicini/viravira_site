@@ -58,6 +58,10 @@ if (!empty($path) && $path !== "/") {
             }
             break;
 
+        case 'contact_form':
+            build("contact_form.php");
+            break;
+
 		default:
 			build("404.php");
 			break;

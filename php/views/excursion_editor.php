@@ -8,6 +8,7 @@ if (isset($_GET['id']) || (isset($_GET['action']) && $_GET['action'] == "create"
 }
 ?>
 
+<link rel="stylesheet" href="/css/confirm.css" type="text/css">
 <h1>Edit Excursions</h1>
 
 <?php
@@ -27,7 +28,9 @@ foreach ($excursions as $type => $excursionList) {
 				<p><?php echo $excursion->getTitle() ?></p>
 				<div class="control">
 					<a href="edit?id=<?php echo $excursion->getId() ?>">Modify</a>
-					<button onclick="save()">Delete</button>
+					<a href="delete?id=<?php echo $excursion->getId() ?>"
+					   class="delete"
+					   data-title="<?php echo $excursion->getTitle() ?>">Delete</a>
 				</div>
 			</div>
             <?php
@@ -41,10 +44,12 @@ foreach ($excursions as $type => $excursionList) {
 <a class="create" href="edit?action=create">Create new Excursion</a>
 
 <div class="confirm">
-	<p id="confirmMessage">Confirm text</p>
 	<div>
-		<label><input id="confirmYes" type="button" value="Yes" /></label>
-		<label><input id="confirmNo" type="button" value="No"></label>
+		<p id="confirmMessage">Confirm text</p>
+		<div>
+			<label><input id="confirmYes" type="button" value="Yes"/></label>
+			<label><input id="confirmNo" type="button" value="No"></label>
+		</div>
 	</div>
 </div>
 
@@ -53,11 +58,21 @@ foreach ($excursions as $type => $excursionList) {
         crossorigin="anonymous"></script>
 <script src="/js/alert.js"></script>
 <script>
-	async function save() {
-	    const confirm = await ui.confirm("Are you sure you want to delete the excursion?");
 
-	    if (confirm) {
-	        console.log("yes");
-	    }
-	}
+	$(".delete").each(function() {
+	    $(this).on("click", function(event) {
+	        event.preventDefault();
+	        save(event, $(this).attr("data-title"), function () {
+	            location.href = event.target.href;
+	        })
+	    })
+	});
+
+    const save = async (event, title, confirmed) => {
+        const confirm = await ui.confirm(`Are you sure you want to delete the excursion: ${title}?`);
+
+        if (confirm) {
+            confirmed();
+        }
+    }
 </script>
