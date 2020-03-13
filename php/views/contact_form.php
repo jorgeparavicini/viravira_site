@@ -42,7 +42,7 @@ if (isset($_SESSION['querySubmitted']) && $_SESSION['querySubmitted']) {
 
 $conn = SQLManager::createSession();
 $conn->begin_transaction();
-if (SQLManager::writeQuery($conn, $firstName, $lastName, $email, $phone, $subject, $query)) {
+if (SQLManager::writeQuestion($conn, $firstName, $lastName, $email, $phone, $subject, $query)) {
     ?>
     <h1>Successfully submitted your query.</h1>
     <?php

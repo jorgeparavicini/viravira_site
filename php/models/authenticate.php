@@ -99,3 +99,7 @@ function resetTimeout()
 function logout() {
     $_SESSION['loggedIn'] = false;
 }
+
+function register() {
+
+}
