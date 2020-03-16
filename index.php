@@ -1,5 +1,14 @@
 <?php
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/builder.php";
+require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Authenticator.php";
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Update Session Timeouts
+Authenticator::updateSession();
+
 $path = parse_url(trim($_SERVER['REQUEST_URI']), PHP_URL_PATH);
 $path = pathinfo($path, PATHINFO_FILENAME);
 
@@ -37,7 +46,7 @@ if (!empty($path) && $path !== "/") {
 
             // Overview of all excursions that can be edited
         case 'edit':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/Authenticator.php";
             if (authenticate()) {
                 build("excursion_editor.php");
             }
@@ -45,14 +54,14 @@ if (!empty($path) && $path !== "/") {
 
             // Update the database
         case 'update':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/Authenticator.php";
             if (authenticate()) {
                 build("excursion_updater.php");
             }
             break;
 
         case 'delete':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/authenticate.php";
+            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/Authenticator.php";
             if (authenticate()) {
                 build("delete_excursion.php");
             }
