@@ -3,8 +3,6 @@ require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Excursion.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/AuthenticationException.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/LoginException.php";
 
-public
-
 class Authenticator
 {
     // Number of seconds before the user gets logged out.
@@ -31,40 +29,43 @@ class Authenticator
         }
     }
 
-    // TODO: Update
     /**
-     * @param $username string The username to try to login
-     * @param $password string The password for the user
-     * @throws LoginException Thrown when the login failed.
+     * @param string $username The username to try to login
+     * @param string $password The password for the user
+     * @return bool True if the user could authenticate with the given password , false otherwise
      */
-    static function login($username, $password)
+    static function login(string $username, string $password)
     {
-        $conn = SQLManager::createSession();
-        $sql = "SELECT account_id, password FROM account WHERE username = '{$username}'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows == 1) {
-            $fetched = $result->fetch_assoc();
-            $storedPassword = $fetched['password'];
-
-            if (password_verify($password, $storedPassword)) {
-                $_SESSION['loggedIn'] = true;
-                $_SESSION['name'] = $username;
-                $_SESSION['id'] = $fetched['account_id'];
-                try {
-                    resetTimeout();
-                } catch (AuthenticationException $e) {
-                    throw new LoginException("Could not reset the login time");
+        $conn = SQLManager::createConnection(ConnectionType::UserAuth);
+        $query = "SELECT account_id, password FROM account WHERE username = ?";
+        try {
+            if ($stmt = $conn->prepare($query)) {
+                $stmt->bind_param("s", $username);
+                if (!$stmt->execute()) {
+                    return false;
                 }
 
+                $stmt->store_result();
+                $stmt->bind_result($account_id, $fetched_password);
+                $fetch = $stmt->fetch();
+                $stmt->close();
+
+                if (!$fetch) return false;
+                if (password_verify($password, $fetched_password)) {
+                    $_SESSION['loggedIn'] = true;
+                    $_SESSION['name'] = $username;
+                    $_SESSION['id'] = $account_id;
+                    self::resetTimeout();
+                    return false;
+                }
             } else {
-                throw new LoginException("Incorrect Password");
+                return false;
             }
-        } else {
-            throw new LoginException("Username not found");
+        } finally {
+            $conn->close();
         }
 
-        $conn->close();
+        return false;
     }
 
     /**

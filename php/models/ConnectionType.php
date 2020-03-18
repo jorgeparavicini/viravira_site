@@ -7,4 +7,5 @@ class ConnectionType
     const Insertion = 1;
     const Selection = 2;
     const Update = 3;
+    const UserAuth = 4;
 }

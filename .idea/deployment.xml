@@ -19,7 +19,7 @@
       <paths name="ViraVira Work">
         <serverdata>
           <mappings>
-            <mapping deploy="ViraVira" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
