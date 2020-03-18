@@ -12,20 +12,32 @@ class Excursion
     private $details;
 
 
-
+    /**
+     * @return array The list of excursions
+     */
     public static function loadAll(): array
     {
-        $sql = "SELECT * FROM excursion";
-        $conn = SQLManager::createSession();
-        $result = $conn->query($sql);
-
+        $conn = SQLManager::createConnection(ConnectionType::Selection);
+        $query = "SELECT excursion_id, title, type, thumbnail_url FROM excursion";
         $excursions = [];
-        while ($row = $result->fetch_assoc()) {
-            $excursion = new Excursion($row['title'], $row['type'], $row['thumbnail_url'], $row['excursion_id']);
-            array_push($excursions, $excursion);
-        }
 
-        $conn->close();
+        try {
+            if ($stmt = $conn->prepare($query)) {
+                $stmt->execute();
+
+                $stmt->bind_result($id, $title, $type, $thumbnail_url);
+
+                while ($stmt->fetch()) {
+                    array_push($excursions, new Excursion($title, $type, $thumbnail_url, $id));
+                }
+
+                $stmt->close();
+            } else {
+                return [];
+            }
+        } finally {
+            $conn->close();
+        }
         return $excursions;
     }
 
@@ -47,18 +59,26 @@ class Excursion
     /**
      * @param $id int The id to search for.
      * @return Excursion The excursion with the id.
-     * @throws Exception when the excursion with id was not found.
+     * @throws NotFoundException when the excursion with id was not found.
      */
     public static function loadFromId($id) {
-    	$sql = "SELECT * FROM excursion WHERE excursion_id = {$id}";
-    	$conn = SQLManager::createSession();
-    	$result = $conn->query($sql);
-    	if ($result == null || $result->num_rows != 1) {
-    		throw new Exception("Did not find excursion");
-	    }
-		$row = $result->fetch_assoc();
-    	$conn->close();
-		return new Excursion($row['title'], $row['type'], $row['thumbnail_url'], $row['excursion_id']);
+        $conn = SQLManager::createConnection(ConnectionType::Selection);
+    	$query = "SELECT excursion_id, title, type, thumbnail_url FROM excursion WHERE excursion_id = ?";
+
+    	try {
+    	    if($stmt = $conn->prepare($query)) {
+    	        $stmt->bind_param("i", $id);
+    	        $stmt->execute();
+    	        $stmt->bind_result($id, $title, $type, $thumbnail_url);
+    	        if(!$stmt->fetch()) {
+    	            throw new NotFoundException("Did not find excursion");
+                }
+    	        return new Excursion($title, $type, $thumbnail_url, $id);
+            }
+        } finally {
+            $conn->close();
+        }
+        return null;
     }
 
     public function __construct($title, $type, $thumbnail, $id)
@@ -150,23 +170,25 @@ class Excursion
     	if ($this->id === null) {
             throw new Exception("Excursion has no id");
         }
-    	$sql = "SELECT header, description FROM excursion_description WHERE excursion_id = {$this->id}";
-    	$conn = SQLManager::createSession();
-    	$descriptionResult = $conn->query($sql);
-    	$descriptions = [];
+        $conn = SQLManager::createConnection(ConnectionType::Selection);
+    	$query = "SELECT header, description FROM excursion_description WHERE excursion_id = ?";
 
-    	while ($description = $descriptionResult->fetch_assoc()) {
-    		$header = $description['header'];
-    		$value = $description['description'];
-    		if ($header == "Description")
-		    {
-		    	$this->mainDescription = $value;
-		    } else {
-    			$descriptions[$header] = $value;
-		    }
-	    }
-    	$this->descriptions = $descriptions;
-    	$conn->close();
+    	try {
+    	    if ($stmt = $conn->prepare($query)) {
+    	        $stmt->bind_param("i", $this->id);
+    	        $stmt->execute();
+    	        $stmt->bind_result($header, $description);
+    	        while ($stmt->fetch()) {
+    	            if ($header === "Description") {
+    	                $this->mainDescription = $description;
+                    } else {
+    	                $this->$description[$header] = $description;
+                    }
+                }
+            }
+        } finally {
+            $conn->close();
+        }
     }
 
     private function getIconForDetail($detailKey) {
@@ -196,20 +218,22 @@ class Excursion
             throw new Exception("Excursion has no id");
 	    }
 
-        $sql = "SELECT detail_key, detail_value FROM excursion_detail WHERE excursion_id = {$this->id}";
-    	$conn = SQLManager::createSession();
-        $detailResult = $conn->query($sql);
-        $details = [];
+        $conn = SQLManager::createConnection(ConnectionType::Selection);
+        $query = "SELECT detail_key, detail_value FROM excursion_detail WHERE excursion_id = ?";
 
-        while ($detail = $detailResult->fetch_assoc()) {
-            $key = $detail['detail_key'];
-            $value = $detail['detail_value'];
-            $icon = self::getIconForDetail($key);
-            $details[$key] = ["value" => $value, "icon" => $icon];
+        try {
+            if ($stmt = $conn->prepare($query)) {
+                $stmt->bind_param("i", $this->id);
+                $stmt->execute();
+                $stmt->bind_result($key, $value);
+                while ($stmt->fetch()) {
+                    $icon = self::getIconForDetail($key);
+                    $this->details[$key] = ["value" => $value, "icon" => $icon];
+                }
+            }
+        } finally {
+            $conn->close();
         }
-
-        $this->details = $details;
-        $conn->close();
     }
 
 
@@ -222,15 +246,22 @@ class Excursion
             throw new Exception("Excursion has no id");
         }
 
-        $sql = "SELECT image_url, description FROM excursion_image WHERE excursion_id = {$this->id}";
-        $conn = SQLManager::createSession();
-        $imageResult = $conn->query($sql);
+        $conn = SQLManager::createConnection(ConnectionType::Selection);
+        $query = "SELECT image_url, description FROM excursion_image WHERE excursion_id = ?";
         $images = [];
-        while ($image = $imageResult->fetch_assoc()) {
-            array_push($images, ["url" => $image['image_url'], "description" => $image['description']]);
-        }
 
+        try {
+            if ($stmt = $conn->prepare($query)) {
+                $stmt->bind_param("i", $this->id);
+                $stmt->execute();
+                $stmt->bind_result($url, $description);
+                while ($stmt->fetch()) {
+                    array_push($images, ["url" => $url, "description" => $description]);
+                }
+            }
+        } finally {
+            $conn->close();
+        }
         $this->images = $images;
-        $conn->close();
     }
 }
