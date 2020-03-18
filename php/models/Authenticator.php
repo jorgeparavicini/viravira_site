@@ -1,38 +1,48 @@
 <?php
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Excursion.php";
+require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/SQLManager.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/AuthenticationException.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/LoginException.php";
+require_once "${_SERVER['DOCUMENT_ROOT']}/php/models/ConnectionType.php";
 
 class Authenticator
 {
     // Number of seconds before the user gets logged out.
-    private const Timeout = 600;
+    private const Timeout = 10;
 
-    function authenticate()
+    /**
+     * @return bool True if the user could authenticate correctly.
+     * @throws LoginException If the user could not authenticate.
+     */
+    public static function authenticate()
     {
-        if (self::isLoggedIn($_POST['username'] ?? null)) {
+        $username = htmlspecialchars($_POST['username'] ?? null);
+        $password = htmlspecialchars($_POST['password'] ?? null);
+
+        if (self::isLoggedIn($username)) {
             return true;
         }
 
-        // Not already logged in.
-        try {
-            self::login($_POST['username'] ?? null, $_POST['password'] ?? null);
-            // Successfully logged in
-            return true;
-        } catch (LoginException $e) {
-            if (isset($_POST['username'], $_POST['password'])) {
-                $GLOBALS['loginError'] = "Failed to log user in";
-            }
-
-            build("login.php");
+        // Do not throw login exceptions when the user did not even try to log in.
+        if (!empty($username) && !empty($password)) {
             return false;
         }
+
+        // We do not want to show error messages if there is an error in our sql syntax.
+        try {
+            return self::login($username, $password);
+        } catch (SQLException $e) {
+            return false;
+        }
+
     }
 
     /**
      * @param string $username The username to try to login
      * @param string $password The password for the user
      * @return bool True if the user could authenticate with the given password , false otherwise
+     * @throws LoginException Thrown when the username or password do not match the database entries
+     * @throws SQLException Thrown if the SQL Syntax is invalid, should never be thrown in deployment.
      */
     static function login(string $username, string $password)
     {
@@ -50,16 +60,20 @@ class Authenticator
                 $fetch = $stmt->fetch();
                 $stmt->close();
 
-                if (!$fetch) return false;
+                if (!$fetch) {
+                    throw new LoginException("Username not found");
+                }
                 if (password_verify($password, $fetched_password)) {
                     $_SESSION['loggedIn'] = true;
                     $_SESSION['name'] = $username;
                     $_SESSION['id'] = $account_id;
                     self::resetTimeout();
-                    return false;
+                    return true;
+                } else {
+                    throw new LoginException("Password does not match");
                 }
             } else {
-                return false;
+                throw new SQLException("Invalid SQL Syntax");
             }
         } finally {
             $conn->close();
@@ -114,14 +128,16 @@ class Authenticator
     /**
      * Logs the user out if the session expired. Otherwise resets the timout
      */
-    static function updateSession() {
+    static function updateSession()
+    {
         try {
             if (self::isSessionActive()) {
                 self::resetTimeout();
             } else {
                 self::logout();
             }
-        } catch (AuthenticationException $e) {}
+        } catch (AuthenticationException $e) {
+        }
     }
 
     /**
