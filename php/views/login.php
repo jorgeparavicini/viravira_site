@@ -8,6 +8,7 @@ function buildLogin(string $error = null)
         <?php
         if ($error !== null) {
             echo "<p class='error'>$error</p>";
+            unset($_SESSION['expired']);
         }
         ?>
         <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']) ?>" method="post">

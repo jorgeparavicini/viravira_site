@@ -2,9 +2,11 @@
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/resources/head.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Authenticator.php";
 
-class Builder {
+class Builder
+{
 
-    public static function build(callable $contentCallback, $title, $hasSlideshow = false) {
+    public static function build(callable $contentCallback, $title, $hasSlideshow = false)
+    {
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -35,8 +37,9 @@ class Builder {
     }
 
 
-    public static function buildFromName(string $name, bool $hasSlideshow = false) {
-        self::build(function() use ($name) {
+    public static function buildFromName(string $name, bool $hasSlideshow = false)
+    {
+        self::build(function () use ($name) {
             if (file_exists("{$_SERVER['DOCUMENT_ROOT']}/php/views/{$name}")) {
                 include_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/{$name}";
             } else {
@@ -45,7 +48,8 @@ class Builder {
         }, pathinfo($name, PATHINFO_FILENAME), $hasSlideshow);
     }
 
-    public static function buildAfterAuthentication(string $name, bool $hasSlideshow = false) {
+    public static function buildAfterAuthentication(string $name, bool $hasSlideshow = false)
+    {
         $error_msg = null;
         try {
             if (Authenticator::authenticate()) {
@@ -58,6 +62,8 @@ class Builder {
             $error_msg = "Login Credentials do not match";;
         }
         require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/login.php";
-        buildLogin($error_msg);
+        self::build(function () use ($error_msg) {
+            buildLogin($error_msg);
+        }, "Login");
     }
 }

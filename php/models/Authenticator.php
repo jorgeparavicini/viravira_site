@@ -3,6 +3,7 @@ require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Excursion.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/SQLManager.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/AuthenticationException.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/LoginException.php";
+require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/SessionExpiredException.php";
 require_once "${_SERVER['DOCUMENT_ROOT']}/php/models/ConnectionType.php";
 
 class Authenticator
@@ -20,23 +21,20 @@ class Authenticator
         $username = htmlspecialchars($_POST['username'] ?? null);
         $password = htmlspecialchars($_POST['password'] ?? null);
 
-        if (self::isLoggedIn($username)) {
-            try {
-                if (self::isSessionActive()) {
-                    return true;
-                } else {
-                    throw new SessionExpiredException("Session has expired");
-                }
-            } catch (AuthenticationException $e) {
-            }
+        if (self::isLoggedIn()) {
+            return true;
+        }
+
+        if (isset($_SESSION['expired']) && $_SESSION['expired'] === true) {
+            throw new SessionExpiredException("Session has expired");
         }
 
         // Do not throw login exceptions when the user did not even try to log in.
-        if (!empty($username) && !empty($password)) {
+        if (empty($username) || empty($password)) {
             return false;
         }
 
-        // We do not want to show error messages if there is an error in our sql syntax.
+        // We do not want to show error messages if then error in our sql syntax.
         try {
             return self::login($username, $password);
         } catch (SQLException $e) {
@@ -92,17 +90,14 @@ class Authenticator
 
     /**
      * Checks whether the passed user is the session user.
-     * IMPORTANT: This does not check if the user's session is still valid.
-     * For that see @isLoggedIn
-     * @param string $username The username to check if they are logged in
      * @return bool True if the user is logged in
      */
-    static function isLoggedIn(string $username)
+    static function isLoggedIn()
     {
         return isset($_SESSION['loggedIn'])
-            && isset($_SESSION['username'])
+            && isset($_SESSION['name'])
             && $_SESSION['loggedIn'] === true
-            && $_SESSION['username'] === $username;
+            && !empty($_SESSION['name']);
     }
 
     /**
@@ -148,6 +143,7 @@ class Authenticator
     static function logout()
     {
         $_SESSION['loggedIn'] = false;
+        $_SESSION['expired'] = true;
         unset($_SESSION['loginTime']);
         unset($_SESSION['username']);
         unset($_SESSION['userId']);
