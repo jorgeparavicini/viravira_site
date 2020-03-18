@@ -13,6 +13,7 @@ class Authenticator
     /**
      * @return bool True if the user could authenticate correctly.
      * @throws LoginException If the user could not authenticate.
+     * @throws SessionExpiredException If the users session has expired.
      */
     public static function authenticate()
     {
@@ -20,7 +21,14 @@ class Authenticator
         $password = htmlspecialchars($_POST['password'] ?? null);
 
         if (self::isLoggedIn($username)) {
-            return true;
+            try {
+                if (self::isSessionActive()) {
+                    return true;
+                } else {
+                    throw new SessionExpiredException("Session has expired");
+                }
+            } catch (AuthenticationException $e) {
+            }
         }
 
         // Do not throw login exceptions when the user did not even try to log in.
@@ -83,27 +91,13 @@ class Authenticator
     }
 
     /**
-     * Checks whether a user is logged in or not and if the user's session is still active.
-     * @param string $username The username to check if they are logged in
-     * @return bool True if the user is logged in
-     */
-    static function isLoggedIn(string $username)
-    {
-        try {
-            return self::isSessionUser($username) && self::isSessionActive();
-        } catch (AuthenticationException $e) {
-            return false;
-        }
-    }
-
-    /**
      * Checks whether the passed user is the session user.
      * IMPORTANT: This does not check if the user's session is still valid.
      * For that see @isLoggedIn
      * @param string $username The username to check if they are logged in
      * @return bool True if the user is logged in
      */
-    static function isSessionUser(string $username)
+    static function isLoggedIn(string $username)
     {
         return isset($_SESSION['loggedIn'])
             && isset($_SESSION['username'])
