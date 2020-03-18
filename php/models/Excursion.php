@@ -172,6 +172,7 @@ class Excursion
         }
         $conn = SQLManager::createConnection(ConnectionType::Selection);
     	$query = "SELECT header, description FROM excursion_description WHERE excursion_id = ?";
+    	$descriptions = [];
 
     	try {
     	    if ($stmt = $conn->prepare($query)) {
@@ -182,13 +183,15 @@ class Excursion
     	            if ($header === "Description") {
     	                $this->mainDescription = $description;
                     } else {
-    	                $this->$description[$header] = $description;
+    	                $descriptions[$header] = $description;
                     }
                 }
             }
         } finally {
             $conn->close();
         }
+
+        $this->descriptions = $descriptions;
     }
 
     private function getIconForDetail($detailKey) {
