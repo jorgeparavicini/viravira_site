@@ -17,71 +17,59 @@ if (!empty($path) && $path !== "/") {
 
 	switch($path) {
 		case 'home':
-			build("home.php");
+			Builder::buildFromName("home.php");
 			break;
 
 		case 'location':
-			build("location.php");
+            Builder::buildFromName("location.php");
 			break;
 
         case 'excursions':
-            build("excursions.php", true);
+            Builder::buildFromName("excursions.php", true);
             break;
 
         case 'excursion':
-            build("excursion.php", true);
+            Builder::buildFromName("excursion.php", true);
             break;
 
         case 'spa':
-            build("spa.php", true);
+            Builder::buildFromName("spa.php", true);
             break;
 
         case 'gallery':
-            build("gallery.php", true);
+            Builder::buildFromName("gallery.php", true);
             break;
 
         case 'contact':
-            build("contact.php");
+            Builder::buildFromName("contact.php");
             break;
 
             // Overview of all excursions that can be edited
         case 'edit':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/Authenticator.php";
-            if (authenticate()) {
-                build("excursion_editor.php");
-            }
+            Builder::buildAfterAuthentication("excursion_editor.php");
             break;
 
             // Update the database
         case 'update':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/Authenticator.php";
-            if (authenticate()) {
-                build("excursion_updater.php");
-            }
+            Builder::buildAfterAuthentication("excursion_updater.php");
             break;
 
         case 'delete':
-            require_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/Authenticator.php";
-            if (authenticate()) {
-                build("delete_excursion.php");
-            }
+            Builder::buildAfterAuthentication("delete_excursion.php");
             break;
 
         case 'contact_form':
-            if (session_status() === PHP_SESSION_NONE) {
-                session_start();
-            }
-            build("contact_form.php");
+            Builder::buildFromName("contact_form.php");
             break;
 
         case 'register':
-            build("register.php");
+            Builder::buildFromName("register.php");
             break;
 
 		default:
-			build("404.php");
+            Builder::buildFromName("404.php");
 			break;
 	}
 } else {
-	build("home.php");
+    Builder::buildFromName("home.php");
 }
