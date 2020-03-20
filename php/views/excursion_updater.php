@@ -26,7 +26,7 @@ function updateExistingRecord()
     $thumbnail = htmlspecialchars($_POST['thumbnail']);
 
     // Start up the connection
-    $conn = SQLManager::createConnection(ConnectionType::Update);
+    $conn = SQLManager::createConnection(ConnectionType::Root);
     // We want to rollback everything if an error occurs
     $conn->begin_transaction();
 
@@ -111,7 +111,7 @@ function createNewRecord()
     $thumbnail = htmlspecialchars($_POST['thumbnail']);
 
     // Start up the connection
-    $conn = SQLManager::createConnection(ConnectionType::Insertion);
+    $conn = SQLManager::createConnection(ConnectionType::Root);
     // We want to rollback everything if an error occurs
     $conn->begin_transaction();
 

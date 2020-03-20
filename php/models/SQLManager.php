@@ -1,22 +1,18 @@
 <?php
 
+require_once "{$_SERVER['DOCUMENT_ROOT']}/php/exceptions/SQLException.php";
 
 class SQLManager
 {
-    //TODO: add login statements
 
 //region Fields
 
     private const servername = "localhost";
-    private const username = "root";
-    private const password = "1234";
     private const db = "viravira";
 
 //endregion Fields
 
 //region Connections
-    // TODO: typed
-
     /**
      * @param int $type The type of connection to create.
      * Depending on the type, different users will be used to connect.
@@ -24,10 +20,39 @@ class SQLManager
      */
     public static function createConnection(int $type)
     {
-        $conn = new mysqli(self::servername, self::username, self::password, self::db);
-        if ($conn->connect_error) {
-            die("Connection failed: {$conn->connect_error}");
+
+        $conn=null;
+        switch ($type) {
+            case ConnectionType::Deletion:
+                $conn = new mysqli(self::servername, "deletion", 'L&u06@BkL99u', self::db);
+                break;
+
+            case ConnectionType::Insertion:
+                $conn = new mysqli(self::servername, "insertion", 'FH75&iW**%oL', self::db);
+                break;
+
+            case ConnectionType::Selection:
+                $conn = new mysqli(self::servername, "selection", '9Fb6%!T3hS$d', self::db);
+                break;
+
+            case ConnectionType::Update:
+                $conn = new mysqli(self::servername, "update", '6SbQ*4sG#A6x', self::db);
+                break;
+
+            case ConnectionType::UserAuth:
+                $conn = new mysqli(self::servername, "auth", '^m3FrV2lqfll', self::db);
+                break;
+
+            case ConnectionType::Root:
+                $conn = new mysqli(self::servername, "root", "1234", self::db);
+                break;
+
+            default:
+                die("Could not create connection");
         }
+
+        if ($conn === null) die("Could not create connection");
+        if ($conn->connect_error) die("Connection failed: {$conn->connect_error}");
         return $conn;
     }
 
@@ -87,7 +112,7 @@ class SQLManager
         $internalConn = $conn == null ? self::createConnection(ConnectionType::Update) : $conn;
         $query = "UPDATE excursion SET title=?, type=?, thumbnail_url=? WHERE excursion_id=?";
         try {
-            if ($stmt = $conn->prepare($query)) {
+            if ($stmt = $internalConn->prepare($query)) {
                 $stmt->bind_param("sssi", $title, $type, $thumbnail, $id);
 
                 return $stmt->execute();
@@ -317,11 +342,11 @@ class SQLManager
      * @return bool True if the insertion succeeded.
      * @throws SQLException If there was a fatal error in the sql execution. Should never be thrown in deployment.
      */
-    public static function writeQuestion(string $name, string $surname, string $email, string $phone,
+    public static function writeQuestion(string $name, ?string $surname, ?string $email, ?string $phone,
                                          string $subject, string $question, mysqli $conn = null)
     {
         $internalConn = $conn == null ? self::createConnection(ConnectionType::Insertion) : $conn;
-        $query = "INSERT INTO query (first_name, last_name, email, phone, subject, query) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO question (first_name, last_name, email, phone, subject, query) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             if ($stmt = $conn->prepare($query)) {

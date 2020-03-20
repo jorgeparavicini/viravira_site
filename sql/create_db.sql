@@ -38,3 +38,13 @@ CREATE TABLE excursion_image(
     PRIMARY KEY (excursion_id, image_url),
     FOREIGN KEY (excursion_id) REFERENCES excursion(excursion_id)
 );
+
+CREATE TABLE question(
+    question_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64),
+    email VARCHAR(128),
+    phone VARCHAR(16),
+    subject VARCHAR(256) NOT NULL,
+    query VARCHAR(1024) NOT NULL
+);
