@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="ViraVira Work" createEmptyFolders="true" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Vira Vira" createEmptyFolders="true" autoUploadExternalChanges="true">
     <serverData>
       <paths name="Vira Vira">
         <serverdata>
           <mappings>
             <mapping deploy="ViraVira" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/data" />
+            <excludedPath local="true" path="$PROJECT_DIR$/python" />
+            <excludedPath local="true" path="$PROJECT_DIR$/scss" />
+            <excludedPath local="true" path="$PROJECT_DIR$/sql" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.gitignore" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="Vira Vira Release">

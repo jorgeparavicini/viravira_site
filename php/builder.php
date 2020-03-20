@@ -5,12 +5,12 @@ require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Authenticator.php";
 class Builder
 {
 
-    public static function build(callable $contentCallback, $title, $hasSlideshow = false)
+    public static function build(callable $contentCallback, $title)
     {
         ?>
         <!DOCTYPE html>
         <html lang="en">
-        <?php buildHead($title, $hasSlideshow); ?>
+        <?php buildHead($title); ?>
         <body>
 
         <?php
@@ -37,7 +37,7 @@ class Builder
     }
 
 
-    public static function buildFromName(string $name, bool $hasSlideshow = false)
+    public static function buildFromName(string $name)
     {
         self::build(function () use ($name) {
             if (file_exists("{$_SERVER['DOCUMENT_ROOT']}/php/views/{$name}")) {
@@ -45,15 +45,15 @@ class Builder
             } else {
                 include_once "{$_SERVER['DOCUMENT_ROOT']}/php/views/404.php";
             }
-        }, pathinfo($name, PATHINFO_FILENAME), $hasSlideshow);
+        }, pathinfo($name, PATHINFO_FILENAME));
     }
 
-    public static function buildAfterAuthentication(string $name, bool $hasSlideshow = false)
+    public static function buildAfterAuthentication(string $name)
     {
         $error_msg = null;
         try {
             if (Authenticator::authenticate()) {
-                self::buildFromName($name, $hasSlideshow);
+                self::buildFromName($name);
                 return;
             }
         } catch (SessionExpiredException $e) {

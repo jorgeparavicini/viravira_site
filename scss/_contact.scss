@@ -1,0 +1,43 @@
+@use 'media';
+
+#contactGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include media.medium {
+    flex-direction: row;
+  }
+
+  #contactForm {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.column {
+  flex-grow: 1;
+  flex-basis: 25%;
+}
+
+.row {
+  display: flex;
+  margin: 5px;
+
+  div {
+    margin: 0 10px;
+  }
+}
+
+.left-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#route {
+  width: 100%;
+  object-fit: cover;
+}

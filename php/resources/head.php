@@ -1,6 +1,6 @@
 <?php
 
-function buildHead($file, $hasGallery)
+function buildHead($file)
 {
     $filename = pathinfo($file, PATHINFO_FILENAME);
     ?>
@@ -18,15 +18,6 @@ function buildHead($file, $hasGallery)
 		<meta name="theme-color" content="#fafafa">
 
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
-        <link rel="stylesheet" type="text/css" href="/css/header.css">
-		<link rel="stylesheet" type="text/css" href="/css/<?php echo $filename?>.css">
-		<?php
-		if ($hasGallery) {
-			?>
-			<link rel="stylesheet" type="text/css" href="/css/gallerySlideshow.css">
-			<?php
-		}
-		?>
 	</head>
     <?php
 }

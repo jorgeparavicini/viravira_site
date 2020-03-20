@@ -4,14 +4,14 @@ require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Excursion.php";
 ?>
 
 <h1>Excursions</h1>
-<h4>
+<p class="abstract">
 	Travelling is more than visiting a place. It is about exploring, immersing and connecting. At Vira Vira we
 	invite you to discover hidden places in beautiful national parks together with one of our trained hotel guides. A
 	seamless experience, just like spending time with local friends.
 	You can customize your adventure with us and set out in small groups of 6 to 8 people, or choose the private
 	option with personal guide.
 	Get inspired, take off and capture the magic of the south of Chile where nature is wild, alive and abundant.
-</h4>
+</p>
 
 <h3>Explore Nature</h3>
 <p>

@@ -9,7 +9,7 @@ require_once "${_SERVER['DOCUMENT_ROOT']}/php/models/ConnectionType.php";
 class Authenticator
 {
     // Number of seconds before the user gets logged out.
-    private const Timeout = 10;
+    private const Timeout = 600;
 
     /**
      * @return bool True if the user could authenticate correctly.

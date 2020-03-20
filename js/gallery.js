@@ -89,4 +89,4 @@ function initializeGallery(i, gallery) {
     advance();
 }
 
-$('.gallery').each(initializeGallery);
+$('.slideshow').each(initializeGallery);

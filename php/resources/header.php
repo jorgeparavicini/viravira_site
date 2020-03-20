@@ -23,10 +23,10 @@
         </ul>
     </nav>
 
-    <div class="headerContent">
+    <div id="headerContent">
         <!-- Hamburger Buns and Patties -->
 
-        <p id="headerTitle">Vira Vira</p>
+        <h1 id="headerTitle">Vira Vira</h1>
         <a href="/home" class="headerLogo">
             <img src="/img/icons/LOGO.svg" alt="Hotel Vira Vira logo"/>
         </a>

@@ -1,0 +1,17 @@
+@use 'variables';
+
+#footer {
+  background-color: variables.$primary-font-color;
+  height: variables.$footer-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  a {
+    color: variables.$background-color;
+  }
+
+  p {
+    margin: 0 auto;
+  }
+}

@@ -97,8 +97,9 @@ class Excursion
 		<a class="card excursion"
 		   href="/excursion?id=<?php echo $this->id ?>">
 			<img src="/img/excursions/<?php echo $this->thumbnail ?>"
-			     alt="<?php echo $alternateText ?>"/>
-			<p><?php echo $this->title ?></p>
+			     alt="<?php echo $alternateText ?>"
+                 class="excursionImage"/>
+			<p class="excursionTitle"><?php echo $this->title ?></p>
 		</a>
         <?php
     }

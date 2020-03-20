@@ -1,9 +1,9 @@
 <?php
 
-function createSlideshow(array $images, $name = "gallery")
+function createSlideshow(array $images, $name = "gallery", $id = null)
 {
     ?>
-	<section id="culture" class="gallery">
+	<section <?php if ($id !== null) echo "id=\"{$id}\""?> class="slideshow">
 		<div class="slider">
 			<div class="slide_viewer">
 				<div class="slide_group">

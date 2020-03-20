@@ -8,7 +8,6 @@ if (isset($_GET['id']) || (isset($_GET['action']) && $_GET['action'] == "create"
 }
 ?>
 
-<link rel="stylesheet" href="/css/confirm.css" type="text/css">
 <h1>Edit Excursions</h1>
 
 <?php
@@ -25,11 +24,11 @@ foreach ($excursions as $type => $excursionList) {
 			<div class="card excursion">
 				<img src="/img/excursions/<?php echo $excursion->getThumbnail() ?>"
 				     alt="<?php echo "Excursion{$index}" ?>"/>
-				<p><?php echo $excursion->getTitle() ?></p>
+				<p class="title" ><?php echo $excursion->getTitle() ?></p>
 				<div class="control">
-					<a href="edit?id=<?php echo $excursion->getId() ?>">Modify</a>
+					<a class="button" href="edit?id=<?php echo $excursion->getId() ?>">Modify</a>
 					<a href="delete?id=<?php echo $excursion->getId() ?>"
-					   class="delete"
+					   class="delete button"
 					   data-title="<?php echo $excursion->getTitle() ?>">Delete</a>
 				</div>
 			</div>
@@ -41,7 +40,7 @@ foreach ($excursions as $type => $excursionList) {
 }
 ?>
 
-<a class="create" href="edit?action=create">Create new Excursion</a>
+<a class="create button" href="edit?action=create" id="createExcursion">Create new Excursion</a>
 
 <div class="confirm">
 	<div>

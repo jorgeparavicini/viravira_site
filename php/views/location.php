@@ -1,6 +1,6 @@
 <section id="description">
 	<h1>Vira Vira Hotel</h1>
-	<p>
+	<p class="abstract">
 		Is located in the middle of a park right at the shore of Liucura river, surrounded by nature and virgin
 		wildlife. The Hotel includes the main house, the owner’s lodge and 12 river villas. Warm interiors, designed
 		with lenga wood and locally crafted “Artesanía” invite to lounge, relax or enjoy fine dining in the Relais &

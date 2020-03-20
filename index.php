@@ -25,23 +25,35 @@ if (!empty($path) && $path !== "/") {
 			break;
 
         case 'excursions':
-            Builder::buildFromName("excursions.php", true);
+            Builder::buildFromName("excursions.php");
             break;
 
         case 'excursion':
-            Builder::buildFromName("excursion.php", true);
+            Builder::buildFromName("excursion.php");
             break;
 
         case 'spa':
-            Builder::buildFromName("spa.php", true);
+            Builder::buildFromName("spa.php");
             break;
 
         case 'gallery':
-            Builder::buildFromName("gallery.php", true);
+            Builder::buildFromName("gallery.php");
             break;
 
         case 'contact':
             Builder::buildFromName("contact.php");
+            break;
+
+        case 'contact_form':
+            Builder::buildFromName("contact_form.php");
+            break;
+
+        case 'impressum':
+            Builder::buildFromName("impressum.php");
+            break;
+
+        case 'datenschutz':
+            Builder::buildFromName("datenschutz.php");
             break;
 
             // Overview of all excursions that can be edited
@@ -56,14 +68,6 @@ if (!empty($path) && $path !== "/") {
 
         case 'delete':
             Builder::buildAfterAuthentication("delete_excursion.php");
-            break;
-
-        case 'contact_form':
-            Builder::buildFromName("contact_form.php");
-            break;
-
-        case 'register':
-            Builder::buildFromName("register.php");
             break;
 
 		default:

@@ -22,23 +22,30 @@ if ($error != null) {
 }
 ?>
 
-<form action="update" method="POST" onsubmit="return validateForm()">
-	<div class="section">
-		<label for="title">Title</label>
-		<input id="title" type="text" name="title" value="<?php if ($excursion != null) echo $excursion->getTitle() ?>"
-		       required>
+<form id="excursionEditor" action="update" method="POST" onsubmit="return validateForm()">
+    <div class="container">
+        <div class="container">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title"
+                   value="<?php if ($excursion != null) echo $excursion->getTitle() ?>"
+                   required>
+        </div>
 
-		<label for="type">Type</label>
-		<input id="type" type="text" name="type" value="<?php if ($excursion != null) echo $excursion->getType() ?>"
-		       required>
+        <div class="container">
+            <label for="type">Type</label>
+            <input id="type" type="text" name="type" value="<?php if ($excursion != null) echo $excursion->getType() ?>"
+                   required>
+        </div>
 
-		<label for="thumbnail">Thumbnail URL</label>
-		<input id="thumbnail" type="text" name="thumbnail"
-		       value="<?php if ($excursion != null) echo $excursion->getThumbnail() ?>" required>
-	</div>
-	<div>
-		<h2>Descriptions</h2>
-		<div id="descriptions">
+        <div class="container">
+            <label for="thumbnail">Thumbnail URL</label>
+            <input id="thumbnail" type="text" name="thumbnail"
+                   value="<?php if ($excursion != null) echo $excursion->getThumbnail() ?>" required>
+        </div>
+    </div>
+    <div>
+        <h2>Descriptions</h2>
+        <div id="descriptions">
             <?php
             if ($excursion != null) {
                 $index = 0;
@@ -47,115 +54,118 @@ if ($error != null) {
                     $descriptions['Description'] = $excursion->getMainDescription();
                 foreach ($descriptions as $key => $description) {
                     ?>
-					<div class="description" id="description<?php echo $index ?>">
-						<div class="panels">
-							<div class="panel">
-								<label for="description<?php echo $index ?>Header">Header</label>
-								<input id="description<?php echo $index ?>Header" type="text"
-								       name="description<?php echo $index ?>Header"
-								       value="<?php echo $key ?>">
-							</div>
-							<div class="panel">
-								<label for="description<?php echo $index ?>Value">Value</label>
-								<input id="description<?php echo $index ?>Value" type="text"
-								       name="description<?php echo $index ?>Value"
-								       value="<?php echo $description ?>">
-							</div>
-						</div>
-						<button name="removedetail<?php echo $index ?>" type="button" onclick="
-								let element = document.getElementById('description<?php echo $index ?>');
-								element.remove();
-								">remove
-						</button>
-					</div>
+                    <div class="description" id="description<?php echo $index ?>">
+                        <div class="panels">
+                            <div class="panel">
+                                <label for="description<?php echo $index ?>Header">Header</label>
+                                <input id="description<?php echo $index ?>Header" type="text"
+                                       name="description<?php echo $index ?>Header"
+                                       value="<?php echo $key ?>">
+                            </div>
+                            <div class="panel">
+                                <label for="description<?php echo $index ?>Value">Value</label>
+                                <input id="description<?php echo $index ?>Value" type="text"
+                                       name="description<?php echo $index ?>Value"
+                                       value="<?php echo $description ?>">
+                            </div>
+                        </div>
+                        <button name="removedetail<?php echo $index ?>" type="button" onclick="
+                                let element = document.getElementById('description<?php echo $index ?>');
+                                element.remove();
+                                ">remove
+                        </button>
+                    </div>
                     <?php
                     $index++;
                 }
             }
             ?>
-		</div>
-		<button name="descriptionData" type="button" onclick="addDescription()">Add Description</button>
-	</div>
-	<div>
-		<h2>Details</h2>
-		<div id="details">
+        </div>
+        <button name="descriptionData" type="button" onclick="addDescription()">Add Description</button>
+    </div>
+    <div>
+        <h2>Details</h2>
+        <div id="details">
             <?php
             if ($excursion != null) {
                 $index = 0;
-                foreach ($excursion->getDetails() as $key => $detail) {
-                    ?>
-					<div class="detail" id="detail<?php echo $index ?>">
-						<div class="panels">
-							<div class="panel">
-								<label for="detail<?php echo $index ?>Name">Name</label>
-								<input id="detail<?php echo $index ?>Name" type="text"
-								       name="detail<?php echo $index ?>Name"
-								       value="<?php echo $key ?>">
-							</div>
-							<div class="panel">
-								<label for="detail<?php echo $index ?>Value">Value</label>
-								<input id="detail<?php echo $index ?>Value" type="text"
-								       name="detail<?php echo $index ?>Value"
-								       value="<?php echo $detail["value"] ?>">
-							</div>
-						</div>
-						<button name="removedetail<?php echo $index ?>" type="button" onclick="
-								let element = document.getElementById('detail<?php echo $index ?>');
-								element.remove();
-								">remove
-						</button>
-					</div>
-                    <?php
-                    $index++;
+                $details = $excursion->getDetails();
+                if ($details !== null) {
+                    foreach ($details as $key => $detail) {
+                        ?>
+                        <div class="detail" id="detail<?php echo $index ?>">
+                            <div class="panels">
+                                <div class="panel">
+                                    <label for="detail<?php echo $index ?>Name">Name</label>
+                                    <input id="detail<?php echo $index ?>Name" type="text"
+                                           name="detail<?php echo $index ?>Name"
+                                           value="<?php echo $key ?>">
+                                </div>
+                                <div class="panel">
+                                    <label for="detail<?php echo $index ?>Value">Value</label>
+                                    <input id="detail<?php echo $index ?>Value" type="text"
+                                           name="detail<?php echo $index ?>Value"
+                                           value="<?php echo $detail["value"] ?>">
+                                </div>
+                            </div>
+                            <button name="removedetail<?php echo $index ?>" type="button" onclick="
+                                    let element = document.getElementById('detail<?php echo $index ?>');
+                                    element.remove();
+                                    ">remove
+                            </button>
+                        </div>
+                        <?php
+                        $index++;
+                    }
                 }
             }
             ?>
-		</div>
-		<button name="detailData" type="button" onclick="addDetail()">Add Detail</button>
-	</div>
-	<div>
-		<h2>Images</h2>
-		<div id="images">
+        </div>
+        <button name="detailData" type="button" onclick="addDetail()">Add Detail</button>
+    </div>
+    <div>
+        <h2>Images</h2>
+        <div id="images">
             <?php
             if ($excursion != null) {
                 foreach ($excursion->getImages() as $index => $detail) {
                     ?>
-					<div class="image" id="image<?php echo $index ?>">
-						<div class="panels">
-							<div class="panel">
-								<label for="image<?php echo $index ?>Url">Name</label>
-								<input id="image<?php echo $index ?>Url" type="text"
-								       name="image<?php echo $index ?>Url"
-								       value="<?php echo $detail['url'] ?>">
-							</div>
-							<div class="panel">
-								<label for="image<?php echo $index ?>Description">Description</label>
-								<input id="image<?php echo $index ?>Description" type="text"
-								       name="image<?php echo $index ?>Description"
-								       value="<?php echo $detail["description"] ?>">
-							</div>
-						</div>
-						<button name="removedetail<?php echo $index ?>" type="button" onclick="
-								let element = document.getElementById('image<?php echo $index ?>');
-								element.remove();
-								">remove
-						</button>
-					</div>
+                    <div class="image" id="image<?php echo $index ?>">
+                        <div class="panels">
+                            <div class="panel">
+                                <label for="image<?php echo $index ?>Url">Name</label>
+                                <input id="image<?php echo $index ?>Url" type="text"
+                                       name="image<?php echo $index ?>Url"
+                                       value="<?php echo $detail['url'] ?>">
+                            </div>
+                            <div class="panel">
+                                <label for="image<?php echo $index ?>Description">Description</label>
+                                <input id="image<?php echo $index ?>Description" type="text"
+                                       name="image<?php echo $index ?>Description"
+                                       value="<?php echo $detail["description"] ?>">
+                            </div>
+                        </div>
+                        <button name="removedetail<?php echo $index ?>" type="button" onclick="
+                                let element = document.getElementById('image<?php echo $index ?>');
+                                element.remove();
+                                ">remove
+                        </button>
+                    </div>
                     <?php
                 }
             }
             ?>
-		</div>
-		<button name="imagesData" type="button" onclick="addImage()">Add Image</button>
-	</div>
-	<div>
+        </div>
+        <button name="imagesData" type="button" onclick="addImage()">Add Image</button>
+    </div>
+    <div>
         <?php
         if ($excursion !== null) {
             echo "<input type=\"hidden\" name=\"id\" value=\"{$excursion->getId()}\">";
         }
         ?>
-		<input type="submit" value="<?php if ($excursion != null) echo "Update"; else echo "Create" ?>">
-	</div>
+        <input type="submit" value="<?php if ($excursion != null) echo "Update"; else echo "Create" ?>">
+    </div>
 </form>
 
 

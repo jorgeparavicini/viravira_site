@@ -1,0 +1,54 @@
+@use 'variables';
+
+input[type=text], textarea, input[type=email], input[type=tel], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea::placeholder {
+  font-size: 0.8em;
+}
+
+textarea {
+  font-family: museo-sans, sans-serif;
+  font-size: 1em;
+}
+
+label {
+  width: 100%;
+  text-align: left;
+}
+
+button, input[type="submit"], a.button {
+  text-decoration: none;
+  color: variables.$primary-font-color;
+  border: none;
+  background-color: #E6E6E6;
+  padding: 8px 32px;
+  text-align: center;
+
+  margin: 10px auto;
+}
+
+button:hover, input[type="submit"]:hover, a.button:hover {
+  cursor: pointer;
+  background-color: #CCCCCC;
+}
+
+.error {
+  color: #CC0000;
+  font-size: 0.7em;
+}
+
+input.error, textarea.error {
+  font-size: 0.85em;
+}
+
+.detail {
+  font-size: 0.7em;
+}

@@ -1,0 +1,31 @@
+@use 'variables';
+@use 'media';
+
+#wellness {
+  height: 80vh;
+  background-image: url("/img/spa-bed.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  div {
+    width: 80%;
+    padding: 20px;
+    background-color: variables.$overlay-color;
+    color: variables.$accent-color;
+
+    @include media.medium {
+      width: 50%;
+    }
+  }
+}
+
+#spa_gallery {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

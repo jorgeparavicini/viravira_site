@@ -9,5 +9,8 @@
     <orderEntry type="library" name="jquery.validate" level="application" />
     <orderEntry type="library" name="jquery-3.4.1" level="application" />
     <orderEntry type="library" name="additional-methods" level="application" />
+    <orderEntry type="library" name="jquery.validate" level="application" />
+    <orderEntry type="library" name="additional-methods" level="application" />
+    <orderEntry type="library" name="aos" level="application" />
   </component>
 </module>

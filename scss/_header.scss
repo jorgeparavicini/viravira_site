@@ -1,0 +1,162 @@
+@use "variables";
+@use "media";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: variables.$header-height;
+  width: 100vw;
+  z-index: 10;
+
+  h1 {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    &.openTitle {
+      opacity: 0;
+      transform: translate(200%, -50%);
+    }
+  }
+
+  a {
+    color: variables.$primary-font-color;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: variables.$accent-color;
+  }
+
+  .headerLogo {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    img {
+      height: variables.$header-height;
+    }
+
+  }
+
+  nav {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: -100;
+
+    transform: translate(0, -100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    left: 0;
+    top: variables.$header-height;
+
+    border: 1px solid variables.$primary-font-color;
+    border-left: 0;
+
+    &.openMenu {
+      transform: none;
+
+      @include media.medium {
+        transform: translate(0, -50%);
+      }
+    }
+
+    // Normal size
+    @include media.medium {
+      left: variables.$hamburger-size*2;
+      top: 50%;
+      transform: translate(calc(-100% - #{variables.$hamburger-size*2}), -50%);
+      z-index: 0;
+      border: none;
+    }
+
+    #menu {
+      opacity: 1;
+      background-color: variables.$background-color;
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+      margin: 0;
+
+      list-style-type: none;
+
+      li {
+        padding: 10px 0;
+        font-size: 1.2em;
+
+        @include media.medium {
+          padding: 0 20px;
+          text-transform: uppercase;
+          font-size: 1em;
+        }
+      }
+
+      @include media.medium {
+        flex-direction: row;
+        padding: 0;
+      }
+    }
+  }
+
+  #headerContent {
+    height: variables.$header-height;
+    background-color: variables.$background-color;
+    border-bottom: 1px solid variables.$primary-font-color;
+
+    #hamburgerButton {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      left: variables.$hamburger-left-indent;
+      top: (variables.$header-height - variables.$hamburger-size) / 2;
+
+      width: variables.$hamburger-size;
+      height: variables.$hamburger-size;
+
+      cursor: pointer;
+
+      span {
+        background: variables.$primary-font-color;
+        width: auto;
+        height: variables.$hamburger-patty-size;
+        border-radius: 3px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.0, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.0, 0.05, 1.0),
+        opacity 0.55s ease;
+      }
+
+      span:first-child {
+        transform-origin: top left;
+        margin: 0 0 variables.$space-between-patty 0;
+      }
+
+      span:last-child {
+        margin: variables.$space-between-patty 0 0 0;
+        transform-origin: top left;
+      }
+    }
+
+    #hamburgerButton.open {
+      span:first-child {
+        transform: rotate(45deg) scale(0.8, 1) translate(0, -1px);
+      }
+      span:nth-child(2) {
+        opacity: 2;
+        transform: scale(0, 0);
+      }
+      span:last-child {
+        transform: rotate(-45deg) scale(0.8, 1) translate(-2px, -2px);
+      }
+    }
+  }
+}

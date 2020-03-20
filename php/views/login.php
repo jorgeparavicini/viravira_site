@@ -12,10 +12,15 @@ function buildLogin(string $error = null)
         }
         ?>
         <form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']) ?>" method="post">
-            <label for="username"><i class="fas fa-user"></i></label>
-            <input id="username" type="text" name="username" placeholder="Username" required>
-            <label for="password"><i class="fas fa-lock"></i></label>
-            <input id="password" type="password" name="password" placeholder="Password" required>
+            <div class="row shrink">
+                <label for="username"><i class="fas fa-user"></i></label>
+                <input id="username" type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="row shrink">
+                <label for="password"><i class="fas fa-lock"></i></label>
+                <input id="password" type="password" name="password" placeholder="Password" required>
+            </div>
             <input type="submit" value="Login">
         </form>
     </div>

@@ -12,8 +12,8 @@ try {
 
 
 <h1><?php echo $excursion->getTitle() ?></h1>
-<p class="description"><?php echo $excursion->getMainDescription() ?></p>
-<img src="/img/excursions/<?php echo $excursion->getThumbnail() ?>" alt="Excursion Thumbnail" id="thumbnail">
+<p class="abstract"><?php echo $excursion->getMainDescription() ?></p>
+<img src="/img/excursions/<?php echo $excursion->getThumbnail() ?>" alt="Excursion Thumbnail" id="thumbnailImage">
 
 <?php
 // Print optional descriptions like prerequisites
@@ -27,14 +27,14 @@ foreach ($excursion->getDescriptions() as $header => $description) {
 ?>
 
 <h2>Details</h2>
-<div class="details">
+<div class="cards">
     <?php
     foreach ($excursion->getDetails() as $key => $detail) {
         ?>
-		<div class="detail">
-			<img src="<?php echo $detail["icon"] ?>" alt="detail icon">
-			<h3 class="detail_title"><?php echo $key ?></h3>
-			<p class="detail_value"><?php echo $detail["value"] ?></p>
+		<div class="card info">
+			<img src="<?php echo $detail["icon"] ?>" alt="detail icon" class="icon">
+			<h3 class="title"><?php echo $key ?></h3>
+			<p class="excerpt"><?php echo $detail["value"] ?></p>
 		</div>
         <?php
     }
@@ -49,7 +49,7 @@ if (count($images) > 0) {
     $images = array_map(function ($image) {
         return "/img/excursions/{$image["url"]}";
     }, $images);
-    createSlideshow($images, "excursions");
+    createSlideshow($images, "excursions", "excursionSlideshow");
 }
 ?>
 

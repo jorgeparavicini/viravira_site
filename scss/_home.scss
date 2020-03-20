@@ -1,0 +1,57 @@
+@use 'variables';
+@use 'media';
+
+.firstSection {
+  position: relative;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.welcomeContainer {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-end;
+}
+
+.ViraVira {
+  font-size: 3rem;
+  color: variables.$background-color;
+  margin: 0;
+  display: none;
+
+  @include media.medium {
+    display: block;
+  }
+
+  @include media.large {
+    font-size: 5rem;
+  }
+}
+
+.headMessage {
+  line-height: 1.1;
+  color: variables.$background-color;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  display: none;
+
+  @include media.medium {
+    display: block;
+  }
+
+  @include media.large {
+    font-size: 1.3rem;
+  }
+}
+
+#galleryIcon, #contactUsIcon {
+  padding: 15px;
+}

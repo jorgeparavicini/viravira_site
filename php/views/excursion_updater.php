@@ -2,6 +2,7 @@
 
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/Excursion.php";
 require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/SQLManager.php";
+require_once "{$_SERVER['DOCUMENT_ROOT']}/php/models/ConnectionType.php";
 
 validateQuery();
 
@@ -19,27 +20,37 @@ function updateExistingRecord()
         return;
     }
 
-    $id = $_POST['id'];
-    $title = $_POST['title'];
-    $type = $_POST['type'];
-    $thumbnail = $_POST['thumbnail'];
+    $id = htmlspecialchars($_POST['id']);
+    $title = htmlspecialchars($_POST['title']);
+    $type = htmlspecialchars($_POST['type']);
+    $thumbnail = htmlspecialchars($_POST['thumbnail']);
 
     // Start up the connection
-    $conn = Excursion::createSession();
+    $conn = SQLManager::createConnection(ConnectionType::Update);
     // We want to rollback everything if an error occurs
     $conn->begin_transaction();
 
     // Update the excursion values for the passed excursion id.
-    if (!SQLManager::updateExcursion($conn, $id, $title, $type, $thumbnail)) {
-        displayFailure("Failed to update the excursion");
-        $conn->rollback();
+    try {
+        if (!SQLManager::updateExcursion($id, $title, $type, $thumbnail, $conn)) {
+            displayFailure("Failed to update the excursion");
+            $conn->rollback();
+            return;
+        }
+    } catch (SQLException $e) {
+        displayFailure($e->getMessage());
         return;
     }
 
     // Clear all existing excursion descriptions for this excursion
-    if (!SQLManager::clearExcursionDescriptions($conn, $id)) {
-        displayFailure("Failed to clear existing descriptions");
-        $conn->rollback();
+    try {
+        if (!SQLManager::clearExcursionDescriptions($id, $conn)) {
+            displayFailure("Failed to clear existing descriptions");
+            $conn->rollback();
+            return;
+        }
+    } catch (SQLException $e) {
+        displayFailure($e->getMessage());
         return;
     }
 
@@ -50,9 +61,14 @@ function updateExistingRecord()
     }
 
     // Clear all existing excursion details
-    if (!SQLManager::clearExcursionDetails($conn, $id)) {
-        displayFailure("Failed to clear existing details");
-        $conn->rollback();
+    try {
+        if (!SQLManager::clearExcursionDetails($id, $conn)) {
+            displayFailure("Failed to clear existing details");
+            $conn->rollback();
+            return;
+        }
+    } catch (SQLException $e) {
+        displayFailure($e->getMessage());
         return;
     }
 
@@ -63,9 +79,14 @@ function updateExistingRecord()
     }
 
     // Clear all existing excursion images
-    if (!SQLManager::clearExcursionImages($conn, $id)) {
-        displayFailure("Failed to clear existing images");
-        $conn->rollback();
+    try {
+        if (!SQLManager::clearExcursionImages($id, $conn)) {
+            displayFailure("Failed to clear existing images");
+            $conn->rollback();
+            return;
+        }
+    } catch (SQLException $e) {
+        displayFailure($e->getMessage());
         return;
     }
 
@@ -85,34 +106,39 @@ function createNewRecord()
 {
     if (!areCriticalValuesSet()) return;
 
-    $title = $_POST['title'];
-    $type = $_POST['type'];
-    $thumbnail = $_POST['thumbnail'];
+    $title = htmlspecialchars($_POST['title']);
+    $type = htmlspecialchars($_POST['type']);
+    $thumbnail = htmlspecialchars($_POST['thumbnail']);
 
     // Start up the connection
-    $conn = Excursion::createSession();
+    $conn = SQLManager::createConnection(ConnectionType::Insertion);
     // We want to rollback everything if an error occurs
     $conn->begin_transaction();
 
-    $id = SQLManager::createExcursion($conn, $title, $type, $thumbnail);
-    if ($id <= 0) {
-        displayFailure("Failed to create excursion");
-        $conn->rollback();
-        return;
-    }
+    try {
+        $id = SQLManager::createExcursion($title, $type, $thumbnail, $conn);
+        if ($id <= 0) {
+            displayFailure("Failed to create excursion");
+            $conn->rollback();
+            return;
+        }
 
-    if (!insertExcursionDescriptions($conn)) {
-        $conn->rollback();
-        return;
-    }
+        if (!insertExcursionDescriptions($conn)) {
+            $conn->rollback();
+            return;
+        }
 
-    if (!insertExcursionDetails($conn)) {
-        $conn->rollback();
-        return;
-    }
+        if (!insertExcursionDetails($conn)) {
+            $conn->rollback();
+            return;
+        }
 
-    if (!insertExcursionImages($conn)) {
-        $conn->rollback();
+        if (!insertExcursionImages($conn)) {
+            $conn->rollback();
+            return;
+        }
+    } catch (SQLException $e) {
+        displayFailure($e->getMessage());
         return;
     }
 
@@ -151,11 +177,17 @@ function insertExcursionDescriptions($conn)
             return false;
         }
 
-        if (!SQLManager::insertExcursionDescription($conn,
-            $_POST['id'],
-            $_POST["description{$descriptionIndex}Header"],
-            $_POST["description{$descriptionIndex}Value"])) {
-            displayFailure("Failed to insert description");
+        try {
+            if (!SQLManager::insertExcursionDescription(
+                htmlspecialchars($_POST['id']),
+                htmlspecialchars($_POST["description{$descriptionIndex}Header"]),
+                htmlspecialchars($_POST["description{$descriptionIndex}Value"]),
+                $conn)) {
+                displayFailure("Failed to insert description");
+                return false;
+            }
+        } catch (SQLException $e) {
+            displayFailure($e->getMessage());
             return false;
         }
 
@@ -174,11 +206,17 @@ function insertExcursionDetails($conn)
             return false;
         }
 
-        if (!SQLManager::insertExcursionDetail($conn,
-            $_POST['id'],
-            $_POST["detail{$detailIndex}Name"],
-            $_POST["detail{$detailIndex}Value"])) {
-            displayFailure("Failed to insert detail");
+        try {
+            if (!SQLManager::insertExcursionDetail(
+                htmlspecialchars($_POST['id']),
+                htmlspecialchars($_POST["detail{$detailIndex}Name"]),
+                htmlspecialchars($_POST["detail{$detailIndex}Value"]),
+                $conn)) {
+                displayFailure("Failed to insert detail");
+                return false;
+            }
+        } catch (SQLException $e) {
+            displayFailure($e->getMessage());
             return false;
         }
 
@@ -197,8 +235,17 @@ function insertExcursionImages($conn)
             return false;
         }
 
-        if (!SQLManager::insertExcursionImage($conn, $_POST["id"], $_POST["image{$imageIndex}Url"], $_POST["image{$imageIndex}Description"])) {
-            displayFailure("Failed to insert image");
+        try {
+            if (!SQLManager::insertExcursionImage(
+                htmlspecialchars($_POST["id"]),
+                htmlspecialchars($_POST["image{$imageIndex}Url"]),
+                htmlspecialchars($_POST["image{$imageIndex}Description"]),
+                $conn)) {
+                displayFailure("Failed to insert image");
+                return false;
+            }
+        } catch (SQLException $e) {
+            displayFailure($e->getMessage());
             return false;
         }
 
@@ -220,16 +267,16 @@ function validateQuery()
 function displayFailure($message)
 {
     ?>
-	<h1>Failure</h1>
-	<p class="error"><?php echo $message ?></p>
+    <h1>Failure</h1>
+    <p class="error"><?php echo $message ?></p>
     <?php
 }
 
 function displaySuccess($message)
 {
     ?>
-	<h1>Success</h1>
-	<p class="success"><?php echo $message ?></p>
+    <h1>Success</h1>
+    <p class="success"><?php echo $message ?></p>
     <?php
 }
 
@@ -237,4 +284,4 @@ function displaySuccess($message)
 
 ?>
 
-<a href="edit">Go back</a>
+<a class="button" href="edit">Go back</a>
