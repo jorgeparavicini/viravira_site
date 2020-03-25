@@ -8,6 +8,8 @@ CREATE TABLE account(
   email VARCHAR(128)
 );
 
+INSERT INTO account(username, password, email) VALUES ("test", "$2y$10$h6Fb42e9ZPe/1nd/2Za8A.8ITnPwxzipLDFuvWTexA9bkLUbiiYI.", null);
+
 CREATE TABLE excursion(
     excursion_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(512) NOT NULL,

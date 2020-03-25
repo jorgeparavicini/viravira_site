@@ -21,7 +21,7 @@ class SQLManager
     public static function createConnection(int $type)
     {
 
-        $conn=null;
+        $conn = null;
         switch ($type) {
             case ConnectionType::Deletion:
                 $conn = new mysqli(self::servername, "deletion", 'L&u06@BkL99u', self::db);

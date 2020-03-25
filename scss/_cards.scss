@@ -103,6 +103,10 @@
     }
   }
 
+  .control {
+    margin-bottom: 30px;
+  }
+
   &.excursion {
     min-width: 220px;
     @include media.small {
